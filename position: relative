@@ -45,14 +45,46 @@ header {
       text-decoration: none;
       font-weight: bold;
     }
-    .hero-image img {
+    .hero-image {
+    position: relative;
+}
+
+.hero-image img {
     width: 100%;
     height: auto;
     display: block;
 }
-      padding: 90px 8%;
-      background: linear-gradient(135deg, #e8fbfd, #fff0f5);
-      text-align: center;
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.75);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 520px;
+    text-align: left;
+}
+
+.hero-overlay h1 {
+    color: #139aaa;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-overlay p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.hero {
+    padding: 90px 8%;
+    background: linear-gradient(135deg, #e8fbfd, #fff0f5);
+    text-align: center;
+}
     }
     .hero h1 {
       font-size: 42px;
@@ -190,10 +222,7 @@ header {
       医療機関の求人掲載申込
     </a>
   </div>
-</div>
-    .hero-image {
-    position: relative;
-}
+
 
 .hero-image img {
     width: 100%;
