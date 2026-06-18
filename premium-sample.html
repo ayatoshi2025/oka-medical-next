@@ -125,7 +125,15 @@
       padding: 24px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
     }
-
+    
+.small-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+    
     .flow {
       display: flex;
       flex-wrap: wrap;
@@ -331,25 +339,18 @@
 </section>
   <section class="main-card">
     <h2>スタッフの声</h2>
+    
     <div class="voice-cards">
       
-      </div><div class="small-card">
+      <div class="small-card">
   <img src="staff1.jpg" alt="看護師">
-
   <h3>入職3年目 / 看護師</h3>
-
   <p>
     先輩が丁寧に教えてくれるので、
     ブランクがあっても安心して働けました。
   </p>
 </div>
-    .small-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
+    
       <div class="small-card">
         <h3>入職5年目 / 看護師</h3>
         <p>子育てと両立しながら働いています。急なお休みにも理解があり助かっています。</p>
@@ -397,7 +398,7 @@
     </div>
   </section>
 
-  <div class="info">
+ <section class="main-card">
   <div>
     <strong>施設ホームページ</strong><br>
     <a href="https://www.aoba-medical.jp" target="_blank">
