@@ -80,6 +80,36 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    .issues {
+      padding: 80px 8%;
+      background: #f8fbfc;
+    }
+
+    .issues h2 {
+      text-align: center;
+      color: #139aaa;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #139aaa;
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
@@ -112,8 +142,7 @@
   </div>
 </div>
 
-</body>
-</html><section class="issues">
+<section class="issues">
   <h2>採用でお困りではありませんか？</h2>
 
   <div class="cards">
@@ -133,32 +162,6 @@
     </div>
   </div>
 </section>
-.issues {
-  padding: 80px 8%;
-  background: #f8fbfc;
-}
 
-.issues h2 {
-  text-align: center;
-  color: #139aaa;
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-  color: #139aaa;
-  margin-top: 0;
-}
+</body>
+</html>
