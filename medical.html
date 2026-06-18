@@ -4,47 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>医療機関の皆様へ｜OKAメディカルネクスト</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 5px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo img {
+      height: 80px;
+      width: auto;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .medical-hero {
+      position: relative;
+    }
+
+    .medical-hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .medical-hero-overlay {
+      position: absolute;
+      top: 42%;
+      left: 8%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.78);
+      padding: 34px;
+      border-radius: 22px;
+      max-width: 560px;
+      text-align: left;
+    }
+
+    .medical-hero-overlay h1 {
+      color: #139aaa;
+      font-size: 46px;
+      margin-bottom: 20px;
+    }
+
+    .medical-hero-overlay p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: #22b8c8;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-<h1>医療機関の皆様へ</h1>
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.png" alt="OKAメディカルネクスト">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html#jobs">求人を探す</a>
+    <a href="medical.html">医療機関の方へ</a>
+    <a href="index.html#contact">お問い合わせ</a>
+  </nav>
+</header>
 
-<p>
-OKAメディカルネクストは、看護師採用に取り組む医療機関様を支援する求人情報サービスです。
-</p>
+<div class="medical-hero">
+  <img src="hospital-staff.png" alt="医療機関の採用支援">
 
-<h2>採用でお困りではありませんか？</h2>
-
-<ul>
-  <li>応募がなかなか集まらない</li>
-  <li>求人掲載の手間を減らしたい</li>
-  <li>看護師へ職場の魅力を届けたい</li>
-  <li>採用活動を分かりやすく進めたい</li>
-</ul>
-
-<h2>OKAメディカルネクストがサポートします</h2>
-
-<p>
-求人情報の掲載を通じて、医療機関様の採用活動をサポートします。
-料金を前面に出すのではなく、まずは採用のお悩みをお聞きします。
-</p>
-
-<h2>求人掲載までの流れ</h2>
-
-<ol>
-  <li>フォームよりお問い合わせ</li>
-  <li>掲載内容の確認</li>
-  <li>求人情報の掲載</li>
-  <li>応募受付</li>
-</ol>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSfTmYyM2MRWskbeznJid6_MT5G6euUa-7PDi_bOuaUAQ3vmxA/viewform" target="_blank">
-求人掲載を申し込む
-</a>
-
-<p>
-<a href="index.html">トップページへ戻る</a>
-</p>
+  <div class="medical-hero-overlay">
+    <h1>医療機関の皆様へ</h1>
+    <p>
+      OKAメディカルネクストは、看護師採用に取り組む医療機関様を支援する求人情報サービスです。<br>
+      職場の魅力を分かりやすく届け、採用活動をサポートします。
+    </p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfTmYyM2MRWskbeznJid6_MT5G6euUa-7PDi_bOuaUAQ3vmxA/viewform" target="_blank">
+      求人掲載を申し込む
+    </a>
+  </div>
+</div>
 
 </body>
 </html>
