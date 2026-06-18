@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>医療機関の皆様へ｜OKAメディカルネクスト</title>
+
   <style>
     body {
       margin: 0;
@@ -47,28 +48,27 @@
       display: block;
     }
 
-    .medical-hero-overlay {
+    .medical-overlay {
       position: absolute;
-      top: 42%;
+      top: 40%;
       left: 8%;
       transform: translateY(-50%);
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.82);
       padding: 34px;
       border-radius: 22px;
       max-width: 560px;
       text-align: left;
     }
 
-    .medical-hero-overlay h1 {
+    .medical-overlay h1 {
       color: #139aaa;
       font-size: 46px;
-      margin-bottom: 20px;
+      margin: 0 0 18px;
     }
 
-    .medical-hero-overlay p {
+    .medical-overlay p {
       font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
     }
 
     .btn {
@@ -81,37 +81,81 @@
       font-weight: bold;
     }
 
-    .issues {
+    section {
       padding: 80px 8%;
-      background: #f8fbfc;
     }
 
-    .issues h2 {
+    h2 {
       text-align: center;
       color: #139aaa;
       font-size: 36px;
       margin-bottom: 40px;
     }
 
-    .cards {
+    .issues {
+      background: #f8fbfc;
+    }
+
+    .cards,
+    .plan-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
 
-    .card {
+    .card,
+    .plan-card {
       background: white;
       padding: 30px;
       border-radius: 20px;
       box-shadow: 0 6px 24px rgba(0,0,0,0.08);
     }
 
-    .card h3 {
+    .card h3,
+    .plan-card h3 {
       color: #139aaa;
       margin-top: 0;
     }
+
+    .premium {
+      border: 3px solid #22b8c8;
+    }
+
+    .plan-note {
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #e8fbfd, #fff0f5);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px;
+      }
+
+      .medical-overlay {
+        position: static;
+        transform: none;
+        margin: 20px;
+      }
+
+      .medical-overlay h1 {
+        font-size: 34px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -120,6 +164,7 @@
       <img src="logo.png" alt="OKAメディカルネクスト">
     </a>
   </div>
+
   <nav>
     <a href="index.html#jobs">求人を探す</a>
     <a href="medical.html">医療機関の方へ</a>
@@ -130,7 +175,7 @@
 <div class="medical-hero">
   <img src="hospital-staff.png" alt="医療機関の採用支援">
 
-  <div class="medical-hero-overlay">
+  <div class="medical-overlay">
     <h1>医療機関の皆様へ</h1>
     <p>
       OKAメディカルネクストは、看護師採用に取り組む医療機関様を支援する求人情報サービスです。<br>
@@ -161,6 +206,47 @@
       <p>働く環境や雰囲気を看護師へ分かりやすく届けたい。</p>
     </div>
   </div>
+</section>
+
+<section class="plans">
+  <h2>選べる掲載プラン</h2>
+
+  <div class="plan-cards">
+    <div class="plan-card">
+      <h3>スタンダードプラン</h3>
+      <p>まずは求人掲載を始めたい医療機関様向け。</p>
+      <ul>
+        <li>求人情報の掲載</li>
+        <li>施設紹介文の掲載</li>
+        <li>写真掲載</li>
+        <li>応募受付フォームへの導線</li>
+      </ul>
+      <p class="plan-note">料金はお問い合わせ後にご案内します。</p>
+    </div>
+
+    <div class="plan-card premium">
+      <h3>プレミアムプラン</h3>
+      <p>職場の魅力をしっかり伝え、採用広報を強化したい医療機関様向け。</p>
+      <ul>
+        <li>求人情報の掲載</li>
+        <li>施設紹介文の掲載</li>
+        <li>写真掲載</li>
+        <li>優先表示</li>
+        <li>職場紹介ページ作成支援</li>
+      </ul>
+      <p class="plan-note">料金はお問い合わせ後にご案内します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>
+    採用状況や掲載内容について、まずはフォームよりお問い合わせください。
+  </p>
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfTmYyM2MRWskbeznJid6_MT5G6euUa-7PDi_bOuaUAQ3vmxA/viewform" target="_blank">
+    求人掲載を申し込む
+  </a>
 </section>
 
 </body>
