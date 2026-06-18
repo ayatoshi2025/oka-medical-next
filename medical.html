@@ -113,4 +113,52 @@
 </div>
 
 </body>
-</html>
+</html><section class="issues">
+  <h2>採用でお困りではありませんか？</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>応募が集まらない</h3>
+      <p>求人を出しても応募が少なく、人材確保に苦労している。</p>
+    </div>
+
+    <div class="card">
+      <h3>掲載の手間を減らしたい</h3>
+      <p>求人作成や更新作業をできるだけシンプルにしたい。</p>
+    </div>
+
+    <div class="card">
+      <h3>職場の魅力を伝えたい</h3>
+      <p>働く環境や雰囲気を看護師へ分かりやすく届けたい。</p>
+    </div>
+  </div>
+</section>
+.issues {
+  padding: 80px 8%;
+  background: #f8fbfc;
+}
+
+.issues h2 {
+  text-align: center;
+  color: #139aaa;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  color: #139aaa;
+  margin-top: 0;
+}
