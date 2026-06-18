@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プレミアム掲載サンプル｜OKAメディカルネクスト</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      background: #f8fbfc;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 5px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo img {
+      height: 80px;
+      width: auto;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 80px 8%;
+      background: linear-gradient(135deg, #e8fbfd, #fff0f5);
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: #139aaa;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      padding: 60px 8%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .main-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+
+    h2, h3 {
+      color: #139aaa;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #22b8c8;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 30px 0;
+    }
+
+    .info div {
+      background: #f8fbfc;
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .gallery div {
+      background: #e8fbfd;
+      border-radius: 18px;
+      padding: 40px 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #139aaa;
+    }
+
+    .message {
+      background: #e8fbfd;
+      padding: 30px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    .voice-cards,
+    .benefit-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .small-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .flow span {
+      background: #fff;
+      border: 2px solid #22b8c8;
+      color: #139aaa;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: bold;
+    }
+
+    .staff {
+  padding: 80px 8%;
+  background: #f8fbfc;
+}
+
+.staff h2 {
+  text-align: center;
+  color: #139aaa;
+  margin-bottom: 40px;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+}
+
+.staff-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+.staff-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.staff-card h3 {
+  color: #139aaa;
+  padding: 20px 20px 0;
+}
+
+.staff-card p {
+  padding: 0 20px 20px;
+}
+    
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: #22b8c8;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 8px;
+    }
+
+    .btn.secondary {
+      background: #f58aa7;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #e8fbfd, #fff0f5);
+      padding: 40px;
+      border-radius: 22px;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.png" alt="OKAメディカルネクスト">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">トップページ</a>
+    <a href="medical.html">医療機関の方へ</a>
+    <a href="standard-sample.html">スタンダード掲載サンプル</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="badge">プレミアム掲載サンプル</span>
+  <h1>青葉メディカルクリニック</h1>
+  <p>職場の魅力をしっかり届ける、採用広報型の掲載イメージです。</p>
+</section>
+
+<main class="container">
+
+  <section class="main-card">
+    <h2>クリニック紹介</h2>
+    <p>
+      青葉メディカルクリニックは、地域に根ざした内科・小児科クリニックです。
+      患者様一人ひとりに寄り添い、安心して相談できる医療を大切にしています。
+    </p>
+
+    <div class="info">
+      <div><strong>募集職種</strong><br>看護師・准看護師</div>
+      <div><strong>勤務地</strong><br>東京都世田谷区</div>
+      <div><strong>雇用形態</strong><br>正社員・パート</div>
+      <div><strong>給与</strong><br>月給30万円〜 / 時給1,900円〜</div>
+      <div><strong>勤務時間</strong><br>9:00〜18:00</div>
+      <div><strong>休日</strong><br>週休2日制</div>
+    </div>
+
+    <a class="btn" href="#">この求人に応募する</a>
+    <a class="btn secondary" href="medical.html">医療機関向けページへ戻る</a>
+  </section>
+
+  <section class="main-card">
+    <h2>施設ギャラリー</h2>
+    <div class="gallery">
+      <div>外観写真</div>
+      <div>受付・待合室</div>
+      <div>診察室</div>
+      <div>スタッフルーム</div>
+    </div>
+  </section>
+
+  <section class="main-card">
+    <h2>院長メッセージ</h2>
+    <div class="message">
+      <h3>「その人らしい健康」を支える、やさしいクリニックを目指して</h3>
+      <p>
+        当院では、患者様一人ひとりの声に耳を傾け、安心して相談できる環境づくりを大切にしています。
+        スタッフ同士が支え合い、笑顔で働ける職場を一緒につくっていきましょう。
+      </p>
+      <p><strong>院長　青葉 太郎</strong></p>
+    </div>
+  </section>
+
+  <section class="staff">
+
+  <h2>スタッフ紹介</h2>
+
+  <div class="staff-grid">
+
+    <div class="staff-card">
+      <img src="staff1.jpg" alt="看護師長">
+      <h3>看護師長　山田</h3>
+      <p>
+        子育て中のスタッフも多く、
+        互いに助け合える職場です。
+      </p>
+    </div>
+
+    <div class="staff-card">
+      <img src="staff2.jpg" alt="看護師">
+      <h3>看護師　佐藤</h3>
+      <p>
+        ブランクから復職しましたが、
+        丁寧なサポートで安心して働けています。
+      </p>
+    </div>
+
+    <div class="staff-card">
+      <img src="staff3.jpg" alt="看護師">
+      <h3>看護師　鈴木</h3>
+      <p>
+        残業が少なく、
+        プライベートとの両立がしやすい環境です。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+  <section class="main-card">
+    <h2>スタッフの声</h2>
+    <div class="voice-cards">
+      
+      </div><div class="small-card">
+  <img src="staff1.jpg" alt="看護師">
+
+  <h3>入職3年目 / 看護師</h3>
+
+  <p>
+    先輩が丁寧に教えてくれるので、
+    ブランクがあっても安心して働けました。
+  </p>
+</div>
+    .small-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+      <div class="small-card">
+        <h3>入職5年目 / 看護師</h3>
+        <p>子育てと両立しながら働いています。急なお休みにも理解があり助かっています。</p>
+      </div>
+      <div class="small-card">
+        <h3>入職1年目 / 准看護師</h3>
+        <p>研修やフォローがしっかりしていて、未経験でも安心してスタートできました。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-card">
+    <h2>福利厚生・サポート体制</h2>
+    <div class="benefit-cards">
+      <div class="small-card">
+        <h3>福利厚生</h3>
+        <ul>
+          <li>社会保険完備</li>
+          <li>交通費支給</li>
+          <li>有給休暇</li>
+          <li>健康診断あり</li>
+        </ul>
+      </div>
+      <div class="small-card">
+        <h3>教育・サポート</h3>
+        <ul>
+          <li>新人研修あり</li>
+          <li>OJT制度あり</li>
+          <li>院内勉強会</li>
+          <li>スキルアップ支援</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-card">
+    <h2>1日の流れ</h2>
+    <div class="flow">
+      <span>9:00 出勤</span>
+      <span>9:30 午前診療</span>
+      <span>12:30 昼休憩</span>
+      <span>14:00 午後診療</span>
+      <span>17:30 片付け</span>
+      <span>18:00 退勤</span>
+    </div>
+  </section>
+
+  <div class="info">
+  <div>
+    <strong>施設ホームページ</strong><br>
+    <a href="https://www.aoba-medical.jp" target="_blank">
+      www.aoba-medical.jp
+    </a>
+  </div>
+
+  <div>
+    <strong>Instagram</strong><br>
+    <a href="https://www.instagram.com/aoba_medical" target="_blank">
+      @aoba_medical
+    </a>
+  </div>
+
+  <div>
+    <strong>採用専用サイト</strong><br>
+    <a href="https://recruit.aoba-medical.jp" target="_blank">
+      採用ページを見る
+    </a>
+  </div>
+</div>
+  
+  <section class="cta">
+    <h2>まずはお気軽にお問い合わせください</h2>
+    <p>求人内容の詳細や施設見学のお申し込みなど、お気軽にご連絡ください。</p>
+    <a class="btn" href="#">この求人に応募する</a>
+    <a class="btn secondary" href="medical.html">医療機関向けページへ戻る</a>
+  </section>
+
+  <p class="note">
+    ※このページはプレミアムプランの掲載イメージです。実在の医療機関ではありません。
+  </p>
+
+</main>
+
+</body>
+</html>
