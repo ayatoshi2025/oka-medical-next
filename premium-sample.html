@@ -95,15 +95,34 @@
       margin-top: 20px;
     }
 
-    .gallery div {
-      background: #e8fbfd;
-      border-radius: 18px;
-      padding: 40px 20px;
-      text-align: center;
-      font-weight: bold;
-      color: #139aaa;
-    }
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
 
+.gallery-item {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item p {
+  margin: 0;
+  padding: 14px;
+  text-align: center;
+  color: #139aaa;
+  font-weight: bold;
+}
     .message {
       background: #e8fbfd;
       padding: 30px;
@@ -279,15 +298,33 @@
     <a class="btn secondary" href="medical.html">医療機関向けページへ戻る</a>
   </section>
 
-  <section class="main-card">
-    <h2>施設ギャラリー</h2>
-    <div class="gallery">
-      <div>外観写真</div>
-      <div>受付・待合室</div>
-      <div>診察室</div>
-      <div>スタッフルーム</div>
+ <section class="main-card">
+  <h2>施設ギャラリー</h2>
+
+  <div class="gallery">
+
+    <div class="gallery-item">
+      <img src="clinic1.jpg" alt="クリニック外観">
+      <p>クリニック外観</p>
     </div>
-  </section>
+
+    <div class="gallery-item">
+      <img src="clinic2.jpg" alt="受付・待合室">
+      <p>受付・待合室</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="clinic3.jpg" alt="診察室">
+      <p>診察室</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="clinic4.jpg" alt="スタッフルーム">
+      <p>スタッフルーム</p>
+    </div>
+
+  </div>
+</section>
 
   <section class="main-card">
     <h2>院長メッセージ</h2>
