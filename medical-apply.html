@@ -1,0 +1,217 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>求人掲載申込フォーム｜OKAメディカルネクスト</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  background:#f8fbfc;
+  color:#333;
+  line-height:1.7;
+}
+
+header{
+  background:#fff;
+  padding:5px 5%;
+  border-bottom:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo img{
+  height:80px;
+}
+
+.container{
+  max-width:900px;
+  margin:50px auto;
+  padding:0 20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:24px;
+  padding:40px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.08);
+}
+
+h1{
+  text-align:center;
+  color:#139aaa;
+}
+
+.subtitle{
+  text-align:center;
+  color:#666;
+  margin-bottom:40px;
+}
+
+.form-group{
+  margin-bottom:25px;
+}
+
+label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  box-sizing:border-box;
+  font-size:16px;
+}
+
+.plan-select{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:10px;
+}
+
+.plan-card{
+  border:2px solid #d9eef1;
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.plan-card:hover{
+  border-color:#22b8c8;
+}
+
+.plan-card input{
+  width:auto;
+  margin-bottom:10px;
+}
+
+.plan-card h3{
+  color:#139aaa;
+  margin:10px 0;
+}
+
+.btn{
+  display:inline-block;
+  background:#22b8c8;
+  color:#fff;
+  border:none;
+  border-radius:999px;
+  padding:16px 40px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.center{
+  text-align:center;
+}
+
+.note{
+  margin-top:25px;
+  font-size:14px;
+  color:#666;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.png" alt="OKAメディカルネクスト">
+    </a>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+
+    <h1>求人掲載申込フォーム</h1>
+
+    <p class="subtitle">
+      医療機関様向けの掲載申込フォームです。<br>
+      内容確認後、OKAメディカルネクストよりご連絡いたします。
+    </p>
+
+    <form>
+
+      <div class="form-group">
+        <label>医療機関名</label>
+        <input type="text" placeholder="〇〇病院">
+      </div>
+
+      <div class="form-group">
+        <label>担当者氏名</label>
+        <input type="text" placeholder="山田 太郎">
+      </div>
+
+      <div class="form-group">
+        <label>メールアドレス</label>
+        <input type="email" placeholder="sample@example.com">
+      </div>
+
+      <div class="form-group">
+        <label>連絡先番号</label>
+        <input type="tel" placeholder="03-1234-5678">
+      </div>
+
+      <div class="form-group">
+        <label>募集期間</label>
+        <input type="text" placeholder="例：2026年7月～2026年9月">
+      </div>
+
+      <div class="form-group">
+        <label>希望プラン</label>
+
+        <div class="plan-select">
+
+          <label class="plan-card">
+            <input type="radio" name="plan" checked>
+            <h3>スタンダードプラン</h3>
+            <p>基本的な求人掲載</p>
+          </label>
+
+          <label class="plan-card">
+            <input type="radio" name="plan">
+            <h3>プレミアムプラン</h3>
+            <p>施設紹介・スタッフ紹介・職場データ掲載</p>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="center">
+        <button type="submit" class="btn">
+          申込内容を送信する
+        </button>
+      </div>
+
+    </form>
+
+    <p class="note">
+      ※現在はサンプル画面です。<br>
+      今後Googleフォームと連携して受付を行う予定です。
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+```
