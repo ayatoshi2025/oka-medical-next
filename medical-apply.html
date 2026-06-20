@@ -229,18 +229,17 @@ input{
       </div>
 
       <h2>掲載料金</h2>
-<input type="hidden" name="plan" id="selected-plan" value="standard">
-      
+
       <div class="plan-price-box">
 
         <div class="plan-price-card">
           <div class="plan-header">
             <h3>スタンダードプラン</h3>
-            <button type="button" class="btn small" onclick="selectPlan('standard')">
-              このプランを選択
-            </button>
-          </div>
-
+           <a class="btn" href="mailto:toshiokada1980@gmail.com?subject=スタンダードプラン掲載申込&body=医療機関名：%0D%0A担当者名：%0D%0A連絡先：%0D%0A募集期間：%0D%0A">
+  このプランを選択
+</a>
+</div>
+          
           <p class="price">月額 10,000円（税込11,000円）</p>
 
           <ul>
@@ -253,9 +252,9 @@ input{
         <div class="plan-price-card">
           <div class="plan-header">
             <h3>プレミアムプラン</h3>
-            <button type="button" class="btn small" onclick="selectPlan('premium')">
-              このプランを選択
-            </button>
+           <a class="btn" href="mailto:toshiokada1980@gmail.com?subject=プレミアムプラン掲載申込&body=医療機関名：%0D%0A担当者名：%0D%0A連絡先：%0D%0A募集期間：%0D%0A">
+  このプランを選択
+</a>
           </div>
 
           <p class="price">月額 30,000円（税込33,000円）</p>
@@ -290,10 +289,5 @@ input{
   </div>
 </div>
 
-<script>
-function selectPlan(plan){
-  document.getElementById('selected-plan').value = plan;
-}
-</script>
 </body>
 </html>
