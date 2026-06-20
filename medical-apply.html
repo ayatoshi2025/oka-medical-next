@@ -152,7 +152,27 @@ input{
 }
 </style>
 </head>
+<script>
+function selectPlan(plan){
 
+  const radios =
+    document.querySelectorAll('input[name="plan"]');
+
+  if(plan === 'スタンダードプラン'){
+    radios[0].checked = true;
+  }
+
+  if(plan === 'プレミアムプラン'){
+    radios[1].checked = true;
+  }
+
+  document
+    .querySelector('.plan-select')
+    .scrollIntoView({
+      behavior:'smooth'
+    });
+}
+</script>
 <body>
 
 <header>
@@ -204,8 +224,15 @@ input{
 
 <div class="plan-price-box">
 
-  <div class="plan-price-card">
-    <h3>スタンダードプラン</h3>
+ <div class="plan-header">
+  <h3>スタンダードプラン</h3>
+
+  <button type="button"
+          class="plan-btn"
+          onclick="selectPlan('スタンダードプラン')">
+    このプランを選択
+  </button>
+</div>
     <p class="price">月額 10,000円（税込11,000円）</p>
     <ul>
       <li>求人掲載 1件</li>
@@ -215,7 +242,15 @@ input{
   </div>
 
   <div class="plan-price-card">
-    <h3>プレミアムプラン</h3>
+    <h3>プレミアムプラン</h3><div class="plan-header">
+  <h3>プレミアムプラン</h3>
+
+  <button type="button"
+          class="plan-btn"
+          onclick="selectPlan('プレミアムプラン')">
+    このプランを選択
+  </button>
+</div>
     <p class="price">月額 30,000円（税込33,000円）</p>
     <ul>
       <li>求人掲載 最大5件</li>
