@@ -229,7 +229,8 @@ input{
       </div>
 
       <h2>掲載料金</h2>
-
+<input type="hidden" name="plan" id="selected-plan" value="standard">
+      
       <div class="plan-price-box">
 
         <div class="plan-price-card">
@@ -272,26 +273,7 @@ input{
 
       </div>
 
-      <div class="form-group" id="apply-form">
-        <label>希望プラン</label>
-
-        <div class="plan-select">
-
-          <label class="plan-card">
-            <input type="radio" name="plan" value="standard" checked>
-            <h3>スタンダードプラン</h3>
-            <p>基本的な求人掲載</p>
-          </label>
-
-          <label class="plan-card">
-            <input type="radio" name="plan" value="premium">
-            <h3>プレミアムプラン</h3>
-            <p>施設紹介・スタッフ紹介・職場データ掲載</p>
-          </label>
-
-        </div>
-      </div>
-
+      
       <div class="center">
         <button type="submit" class="btn">
           申込内容を送信する
@@ -310,17 +292,8 @@ input{
 
 <script>
 function selectPlan(plan){
-  const radio = document.querySelector('input[name="plan"][value="' + plan + '"]');
-
-  if(radio){
-    radio.checked = true;
-  }
-
-  document.getElementById('apply-form').scrollIntoView({
-    behavior:'smooth'
-  });
+  document.getElementById('selected-plan').value = plan;
 }
 </script>
-
 </body>
 </html>
