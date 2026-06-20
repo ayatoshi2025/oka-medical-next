@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>お支払いのご案内｜OKAメディカルネクスト</title>
+<title>請求書｜OKAメディカルネクスト</title>
 
 <style>
 body{
@@ -16,81 +16,101 @@ body{
 
 .container{
   max-width:900px;
-  margin:50px auto;
+  margin:40px auto;
   padding:0 20px;
 }
 
-.card{
+.invoice{
   background:#fff;
-  border-radius:24px;
-  padding:40px;
+  padding:50px;
+  border-radius:20px;
   box-shadow:0 6px 24px rgba(0,0,0,0.08);
-}
-
-h1,h2{
-  color:#139aaa;
 }
 
 h1{
   text-align:center;
+  font-size:36px;
+  margin-bottom:40px;
 }
 
-.subtitle{
-  text-align:center;
-  color:#666;
+.header-row{
+  display:flex;
+  justify-content:space-between;
   margin-bottom:40px;
+}
+
+.company{
+  text-align:right;
+}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:30px 0;
+}
+
+.table th,
+.table td{
+  border:1px solid #ddd;
+  padding:14px;
+}
+
+.table th{
+  background:#f8fbfc;
+}
+
+.total{
+  text-align:right;
+  font-size:28px;
+  font-weight:bold;
+  color:#139aaa;
+  margin:30px 0;
 }
 
 .bank-box{
   background:#f8fbfc;
-  border:2px solid #d9eef1;
-  border-radius:20px;
-  padding:30px;
-  margin:30px 0;
-}
-
-.bank-info{
-  font-size:18px;
-  line-height:2;
-}
-
-.flow{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:16px;
-  margin:30px 0;
-}
-
-.flow div{
-  background:#e8fbfd;
-  border-radius:16px;
-  padding:18px;
-  text-align:center;
-  font-weight:bold;
-  color:#139aaa;
+  border:1px solid #d9eef1;
+  border-radius:14px;
+  padding:24px;
+  margin-top:30px;
 }
 
 .notice{
-  background:#fff8e6;
-  border-left:5px solid #f5b400;
-  padding:20px;
-  border-radius:12px;
-  color:#555;
+  font-size:14px;
+  color:#666;
+  margin-top:20px;
 }
 
 .btn{
   display:inline-block;
   background:#22b8c8;
-  color:#fff;
+  color:white;
+  border:none;
   text-decoration:none;
-  padding:15px 35px;
+  padding:14px 30px;
   border-radius:999px;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .center{
   text-align:center;
   margin-top:30px;
+}
+
+@media print{
+  body{
+    background:white;
+  }
+
+  .invoice{
+    box-shadow:none;
+    border-radius:0;
+  }
+
+  .no-print{
+    display:none;
+  }
 }
 </style>
 </head>
@@ -98,54 +118,108 @@ h1{
 <body>
 
 <div class="container">
-  <div class="card">
+  <div class="invoice">
 
-    <h1>お支払いのご案内</h1>
+    <h1>請求書</h1>
 
-    <p class="subtitle">
-      お申し込みありがとうございます。<br>
-      ご入金確認後、掲載内容の確認を行い、求人掲載を開始いたします。
-    </p>
+    <div class="header-row">
+      <div>
+        <p>ご請求先：医療機関様</p>
+        <p>発行日：<span id="today"></span></p>
+        <p>請求書番号：OKA-<span id="invoiceNo"></span></p>
+      </div>
 
-    <h2>掲載開始までの流れ</h2>
-
-    <div class="flow">
-      <div>1. お申し込み</div>
-      <div>2. お支払い</div>
-      <div>3. 内容確認</div>
-      <div>4. 掲載開始</div>
-    </div>
-
-    <div class="bank-box">
-      <h2>銀行振込</h2>
-
-      <div class="bank-info">
-        銀行名：三井住友銀行<br>
-        支店名：豊橋支店<br>
-        口座種別：普通口座<br>
-        口座番号：3661960<br>
-        口座名義：オカダ トシアキ
+      <div class="company">
+        <strong>OKAメディカルネクスト</strong><br>
+        岡田 利章<br>
+        メール：toshiokada1980@gmail.com
       </div>
     </div>
 
-    <div class="notice">
-      <strong>ご確認ください</strong><br>
-      ※振込手数料はご負担ください。<br>
-      ※ご入金確認後、通常1〜3営業日以内に掲載準備を開始します。<br>
-      ※現在、クレジット決済は準備中です。
+    <table class="table">
+      <tr>
+        <th>内容</th>
+        <th>税抜金額</th>
+        <th>消費税</th>
+        <th>税込金額</th>
+      </tr>
+      <tr>
+        <td id="planName">掲載プラン</td>
+        <td id="basePrice"></td>
+        <td id="tax"></td>
+        <td id="totalPrice"></td>
+      </tr>
+    </table>
+
+    <div class="total">
+      ご請求金額：<span id="grandTotal"></span>
     </div>
 
-    <div class="center">
-  <a href="index.html" class="btn">
-    トップページへ戻る
-  </a>
+    <div class="bank-box">
+      <h2>お振込先</h2>
+      銀行名：三井住友銀行<br>
+      支店名：豊橋支店<br>
+      口座種別：普通口座<br>
+      口座番号：3661960<br>
+      口座名義：オカダ トシアキ
+    </div>
+
+    <p class="notice">
+      ※振込手数料は貴社にてご負担ください。<br>
+      ※ご入金確認後、掲載内容の確認を行い、求人掲載を開始いたします。<br>
+      ※現在、クレジット決済は準備中です。
+    </p>
+
+    <div class="center no-print">
+      <button onclick="window.print()" class="btn">
+        印刷・PDF保存
+      </button>
+
+      <a href="index.html" class="btn">
+        トップページへ戻る
+      </a>
+    </div>
+
+  </div>
 </div>
 
-<div class="center" style="margin-top:20px;">
-  <button onclick="window.print()" class="btn">
-    印刷・PDF保存
-  </button>
-</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const plan = params.get("plan");
+
+let planName = "スタンダードプラン";
+let base = 10000;
+let tax = 1000;
+let total = 11000;
+
+if(plan === "premium"){
+  planName = "プレミアムプラン";
+  base = 30000;
+  tax = 3000;
+  total = 33000;
+}
+
+function yen(num){
+  return num.toLocaleString("ja-JP") + "円";
+}
+
+document.getElementById("planName").textContent = planName;
+document.getElementById("basePrice").textContent = yen(base);
+document.getElementById("tax").textContent = yen(tax);
+document.getElementById("totalPrice").textContent = yen(total);
+document.getElementById("grandTotal").textContent = yen(total);
+
+const today = new Date();
+document.getElementById("today").textContent =
+  today.getFullYear() + "年" +
+  (today.getMonth()+1) + "月" +
+  today.getDate() + "日";
+
+document.getElementById("invoiceNo").textContent =
+  today.getFullYear().toString() +
+  String(today.getMonth()+1).padStart(2,"0") +
+  String(today.getDate()).padStart(2,"0");
+</script>
 
 </body>
 </html>
