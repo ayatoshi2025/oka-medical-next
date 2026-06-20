@@ -178,6 +178,10 @@ input{
     padding:28px;
   }
 }
+  .plan-price-card.selected{
+  border:3px solid #22b8c8;
+  background:#e8fbfd;
+}
 </style>
 </head>
 
@@ -235,8 +239,23 @@ input{
         <div class="plan-price-card">
           <div class="plan-header">
             <h3>スタンダードプラン</h3>
-           <a class="btn" href="mailto:toshiokada1980@gmail.com?subject=スタンダードプラン掲載申込&body=医療機関名：%0D%0A担当者名：%0D%0A連絡先：%0D%0A募集期間：%0D%0A">
+           <button type="button" class="btn" onclick="selectPlan('standard')">
   このプランを選択
+             <script>
+function selectPlan(plan){
+  const cards = document.querySelectorAll('.plan-price-card');
+  cards.forEach(card => card.classList.remove('selected'));
+
+  if(plan === 'standard'){
+    cards[0].classList.add('selected');
+  }
+
+  if(plan === 'premium'){
+    cards[1].classList.add('selected');
+  }
+}
+</script>
+</button>
 </a>
 </div>
           
@@ -252,8 +271,9 @@ input{
         <div class="plan-price-card">
           <div class="plan-header">
             <h3>プレミアムプラン</h3>
-           <a class="btn" href="mailto:toshiokada1980@gmail.com?subject=プレミアムプラン掲載申込&body=医療機関名：%0D%0A担当者名：%0D%0A連絡先：%0D%0A募集期間：%0D%0A">
+           <button type="button" class="btn" onclick="selectPlan('premium')">
   このプランを選択
+</button>
 </a>
           </div>
 
@@ -274,7 +294,7 @@ input{
 
       
       <div class="center">
-       </button><a href="payment.html" class="btn">
+       <a href="payment.html" class="btn">
   お支払い手続きへ進む
 </a>
       </div>
