@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>求人を探す｜OKAメディカルネクスト</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  background:#fff;
+  color:#333;
+  line-height:1.7;
+}
+
+header{
+  background:#fff;
+  padding:5px 5%;
+  border-bottom:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo img{
+  height:80px;
+  width:auto;
+}
+
+nav a{
+  margin-left:20px;
+  color:#333;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.page-title{
+  padding:70px 8% 34px;
+  text-align:center;
+}
+
+.page-title h1{
+  color:#139aaa;
+  font-size:40px;
+  margin:0 0 14px;
+}
+
+.page-title p{
+  margin:0 auto;
+  max-width:780px;
+  font-size:17px;
+}
+
+section{
+  padding:48px 8%;
+}
+
+.search-box{
+  max-width:980px;
+  margin:0 auto;
+  background:#f7fbfc;
+  border-radius:20px;
+  padding:30px;
+}
+
+.filters{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.filter h2{
+  margin:0 0 10px;
+  color:#139aaa;
+  font-size:20px;
+}
+
+.tags span{
+  display:inline-block;
+  padding:9px 14px;
+  margin:5px;
+  border-radius:999px;
+  background:#e8fbfd;
+  color:#139aaa;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.08);
+}
+
+.card h2{
+  margin:0 0 12px;
+  color:#139aaa;
+  font-size:22px;
+}
+
+.meta{
+  margin:0 0 18px;
+  color:#555;
+}
+
+.status{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#fff0f5;
+  color:#d45a7a;
+  font-weight:bold;
+  font-size:13px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:999px;
+  background:#22b8c8;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.btn.secondary{
+  background:#f58aa7;
+}
+
+.notice{
+  max-width:980px;
+  margin:0 auto;
+  background:#f5f5f5;
+  color:#666;
+  border-radius:12px;
+  padding:18px;
+  font-size:14px;
+}
+
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg,#e8fbfd,#fff0f5);
+}
+
+.cta p{
+  max-width:760px;
+  margin:0 auto 24px;
+}
+
+footer{
+  background:#233;
+  color:white;
+  text-align:center;
+  padding:35px 8%;
+}
+
+footer a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+@media (max-width:700px){
+  header{
+    display:block;
+    text-align:center;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:6px;
+  }
+
+  .page-title h1{
+    font-size:32px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.png" alt="OKAメディカルネクスト">
+    </a>
+  </div>
+
+  <nav>
+    <a href="jobs.html">求人を探す</a>
+    <a href="medical.html">医療機関の方へ</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<main>
+  <div class="page-title">
+    <h1>求人を探す</h1>
+    <p>
+      OKAメディカルネクストでは、看護師の方に向けた求人情報を順次掲載予定です。
+      現在は掲載準備中のため、公開までしばらくお待ちください。
+    </p>
+  </div>
+
+  <section>
+    <div class="search-box">
+      <div class="filters">
+        <div class="filter">
+          <h2>勤務地</h2>
+          <div class="tags">
+            <span>東京23区</span>
+            <span>東京都下</span>
+            <span>神奈川</span>
+            <span>埼玉</span>
+            <span>千葉</span>
+          </div>
+        </div>
+
+        <div class="filter">
+          <h2>施設形態</h2>
+          <div class="tags">
+            <span>病院</span>
+            <span>クリニック</span>
+            <span>訪問看護</span>
+            <span>介護施設</span>
+            <span>健診</span>
+          </div>
+        </div>
+
+        <div class="filter">
+          <h2>雇用形態</h2>
+          <div class="tags">
+            <span>正社員</span>
+            <span>パート</span>
+            <span>日勤のみ</span>
+            <span>夜勤あり</span>
+            <span>ブランク歓迎</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cards">
+      <div class="card">
+        <span class="status">掲載準備中</span>
+        <h2>東京都内クリニック</h2>
+        <p class="meta">
+          勤務地：東京都内<br>
+          雇用形態：正社員<br>
+          給与目安：月給30万円〜
+        </p>
+        <p>外来業務を中心としたクリニック求人を掲載予定です。</p>
+      </div>
+
+      <div class="card">
+        <span class="status">掲載準備中</span>
+        <h2>訪問看護ステーション</h2>
+        <p class="meta">
+          勤地：関東エリア<br>
+          雇用形態：正社員・パート<br>
+          条件：日勤中心
+        </p>
+        <p>在宅医療に関心のある看護師の方向け求人を掲載予定です。</p>
+      </div>
+
+      <div class="card">
+        <span class="status">掲載準備中</span>
+        <h2>病院・介護施設</h2>
+        <p class="meta">
+          勤務地：首都圏<br>
+          雇用形態：正社員・非常勤<br>
+          条件：経験相談可
+        </p>
+        <p>病棟、外来、施設看護など幅広い求人を順次掲載予定です。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="notice">
+      ※現在は求人掲載準備中です。OKAメディカルネクストは求人情報提供サイトとして運営し、許可取得前において求職者の紹介、推薦、面接調整、採用条件交渉等は行いません。
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>医療機関の掲載をご検討の方へ</h2>
+    <p>
+      掲載内容やプランについては、医療機関向けページまたはお問い合わせフォームよりご確認ください。
+    </p>
+    <a class="btn secondary" href="medical.html">医療機関向けページへ</a>
+    <a class="btn" href="contact.html">掲載について問い合わせる</a>
+  </section>
+</main>
+
+<footer>
+  <p>OKAメディカルネクスト</p>
+  <p>
+    <a href="index.html">トップページ</a>
+    <a href="medical.html">医療機関の方へ</a>
+    <a href="contact.html">お問い合わせ</a>
+  </p>
+  <p>© OKAメディカルネクスト All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
