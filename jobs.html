@@ -40,35 +40,31 @@ nav a{
 }
 
 .page-title{
-  padding:70px 8% 34px;
-  text-align:center;
+  min-height:420px;
+  padding:70px 8%;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.72) 42%, rgba(255,255,255,0.22) 100%),
+    url("求人.png") center / cover no-repeat;
+}
+
+.page-title-text{
+  max-width:560px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.82);
+  box-shadow:0 6px 24px rgba(0,0,0,0.08);
 }
 
 .page-title h1{
   color:#139aaa;
-  font-size:40px;
+  font-size:42px;
   margin:0 0 14px;
 }
 
-.page-title p{
-  margin:0 auto;
-  max-width:780px;
-  font-size:17px;
-}
-.page-title{
-  padding:70px 8% 34px;
-  text-align:center;
-}
-
-.page-title h1{
-  color:#139aaa;
-  font-size:40px;
-  margin:0 0 14px;
-}
-
-.page-title p{
-  margin:0 auto;
-  max-width:780px;
+.page-title-text p{
+  margin:0;
   font-size:17px;
 }
   
@@ -256,16 +252,16 @@ footer a{
 </header>
 
 <main>
- <div class="page-title">
-  <img class="hero-image" src="jobs-hero.png" alt="あなたらしく働ける職場探しを。">
-  <div class="page-title-text">
-    <span class="hero-note">看護師向け求人情報</span>
-    <p>
-      OKAメディカルネクストでは、看護師の方に向けた求人情報を順次掲載予定です。
-      現在は掲載準備中のため、公開までしばらくお待ちください。
-    </p>
+  <div class="page-title">
+    <div class="page-title-text">
+      <span class="hero-note">看護師向け求人情報</span>
+      <h1>求人を探す</h1>
+      <p>
+        OKAメディカルネクストでは、看護師の方に向けた求人情報を順次掲載予定です。
+        現在は掲載準備中のため、公開までしばらくお待ちください。
+      </p>
+    </div>
   </div>
-</div>
 
   <section>
     <div class="search-box">
