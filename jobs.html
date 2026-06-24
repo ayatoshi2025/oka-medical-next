@@ -46,7 +46,7 @@ nav a{
   align-items:flex-end;
   background:
     linear-gradient(90deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.48) 42%, rgba(255,255,255,0.08) 100%),
-    url("jobs-hero.png") center / background-size: contain;
+    url("jobs-hero.png") center center / contain no-repeat;
 }
 
 .page-title-text{
@@ -267,7 +267,27 @@ footer a{
   }
 
 }
-  v
+  header{
+  flex-direction:column;
+  padding:12px 4%;
+}
+
+.logo img{
+  height:60px;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+nav a{
+  margin:0;
+  font-size:15px;
+}
+  
   @media (max-width: 768px){
   .page-title{
     min-height:620px;
