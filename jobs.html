@@ -282,9 +282,16 @@ footer a{
   }
 
   .page-title,
-  .hero{
-    min-height:auto;
+ @media (max-width: 768px){
+
+  .hero img,
+  .hero-image img{
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
   }
+
+}
 
   section{
     padding-left:7%;
