@@ -221,29 +221,67 @@ footer a{
 
 @media (max-width:768px){
 
+  header{
+    flex-direction:column;
+    padding:12px 4%;
+  }
+
+  .logo img{
+    height:60px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+
+  nav a{
+    margin:0;
+    font-size:15px;
+  }
+
   .page-title{
-    min-height:500px;
-    padding:220px 5% 30px;
-    background-position:center center;
-    background-size:cover;
+    position:relative;
+    min-height:320px;
+    padding:0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,0.55) 0%,
+        rgba(255,255,255,0.25) 45%,
+        rgba(255,255,255,0.05) 100%
+      ),
+      url("jobs-hero.png") center center / contain no-repeat;
   }
 
   .page-title-text{
-    max-width:100%;
-    padding:18px;
-    border-radius:16px;
-    transform:none;
+    position:absolute;
+    left:50%;
+    bottom:-60px;
+    transform:translateX(-50%);
+    width:85%;
+    max-width:500px;
+    padding:22px;
+    background:rgba(255,255,255,0.95);
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.12);
+    z-index:2;
   }
 
   .page-title h1{
-    font-size:32px;
+    font-size:28px;
   }
 
   .page-title-text p{
     font-size:15px;
-    line-height:1.8;
+    line-height:1.7;
   }
 
+  section:first-of-type{
+    padding-top:100px;
+  }
 }
 @media (max-width:768px){
 
