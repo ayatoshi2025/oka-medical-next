@@ -6,337 +6,279 @@
   <title>OKAメディカルネクスト</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;color:#333;background:#fff;line-height:1.8}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    header{
+      background:#fff;
+      padding:26px 8%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid #eef4f5;
     }
 
-    body {
-      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-      color: #333;
-      background: #fff;
-      line-height: 1.8;
+    .logo img{width:260px}
+
+    nav{
+      display:flex;
+      gap:44px;
+      font-weight:700;
+      font-size:16px;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    header {
-      background: #fff;
-      padding: 26px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo img {
-      width: 260px;
-    }
-
-    nav {
-      display: flex;
-      gap: 44px;
-      font-weight: 700;
-      font-size: 16px;
-    }
-
-    .hero {
-      min-height: 620px;
+    .hero{
+      min-height:620px;
       background:
-        linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.78) 45%, rgba(255,255,255,.2) 100%),
+        linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.78) 45%,rgba(255,255,255,.2) 100%),
         url("hero.png") center right / cover no-repeat;
-      display: flex;
-      align-items: center;
-      padding: 70px 9%;
+      display:flex;
+      align-items:center;
+      padding:70px 9%;
     }
 
-    .hero-content {
-      max-width: 560px;
+    .hero-content{max-width:560px}
+
+    .hero h1{
+      font-size:48px;
+      line-height:1.35;
+      margin-bottom:26px;
+      font-weight:800;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.35;
-      margin-bottom: 26px;
-      font-weight: 800;
+    .pink{color:#f17ea2}
+    .teal{color:#16a9b4}
+
+    .hero p{
+      font-size:17px;
+      margin-bottom:34px;
     }
 
-    .hero h1 .pink {
-      color: #f17ea2;
+    .hero-buttons{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      width:370px;
     }
 
-    .hero h1 .teal {
-      color: #16a9b4;
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      padding:17px 24px;
+      color:#fff;
+      font-size:19px;
+      font-weight:700;
+      box-shadow:0 12px 24px rgba(0,0,0,.16);
     }
 
-    .hero p {
-      font-size: 17px;
-      margin-bottom: 34px;
+    .btn-pink{background:linear-gradient(135deg,#f78cad,#ef7099)}
+    .btn-teal{background:linear-gradient(135deg,#26c2c9,#0ea4b0)}
+
+    section{padding:70px 8%}
+
+    .section-title{
+      text-align:center;
+      color:#129ca8;
+      font-size:30px;
+      line-height:1.5;
+      margin-bottom:16px;
+      font-weight:800;
     }
 
-    .hero-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      width: 370px;
+    .section-line{
+      width:38px;
+      height:3px;
+      background:#f38aa8;
+      margin:0 auto 24px;
+      border-radius:999px;
     }
 
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      border-radius: 999px;
-      padding: 17px 24px;
-      color: #fff;
-      font-size: 19px;
-      font-weight: 700;
-      box-shadow: 0 12px 24px rgba(0,0,0,.16);
+    .section-lead{
+      text-align:center;
+      font-size:16px;
+      margin-bottom:44px;
     }
 
-    .btn-pink {
-      background: linear-gradient(135deg, #f78cad, #ef7099);
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
+      max-width:1040px;
+      margin:0 auto;
     }
 
-    .btn-teal {
-      background: linear-gradient(135deg, #26c2c9, #0ea4b0);
+    .feature-card{
+      background:#fff;
+      border-radius:16px;
+      padding:34px 26px;
+      text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
     }
 
-    section {
-      padding: 70px 8%;
+    .icon-circle{
+      width:86px;
+      height:86px;
+      border-radius:50%;
+      margin:0 auto 18px;
+      display:grid;
+      place-items:center;
+      font-size:36px;
     }
 
-    .section-title {
-      text-align: center;
-      color: #129ca8;
-      font-size: 30px;
-      line-height: 1.5;
-      margin-bottom: 16px;
-      font-weight: 800;
+    .pink-bg{background:#fde3ec;color:#ef7fa0}
+    .teal-bg{background:#dff7f8;color:#14a9b3}
+
+    .feature-card h3{
+      color:#ef7fa0;
+      font-size:19px;
+      margin-bottom:12px;
     }
 
-    .section-line {
-      width: 38px;
-      height: 3px;
-      background: #f38aa8;
-      margin: 0 auto 24px;
-      border-radius: 999px;
-    }
-
-    .section-lead {
-      text-align: center;
-      font-size: 16px;
-      margin-bottom: 44px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .feature-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 34px 26px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
-    }
-
-    .icon-circle {
-      width: 86px;
-      height: 86px;
-      border-radius: 50%;
-      margin: 0 auto 18px;
-      display: grid;
-      place-items: center;
-      font-size: 36px;
-    }
-
-    .pink-bg {
-      background: #fde3ec;
-      color: #ef7fa0;
-    }
-
-    .teal-bg {
-      background: #dff7f8;
-      color: #14a9b3;
-    }
-
-    .feature-card h3 {
-      color: #ef7fa0;
-      font-size: 19px;
-      margin-bottom: 12px;
-    }
-
-    .job-search {
+    .job-search{
       background:
-        linear-gradient(90deg, rgba(238,251,253,.95) 0%, rgba(255,255,255,.9) 55%, rgba(255,255,255,.2) 100%),
+        linear-gradient(90deg,rgba(238,251,253,.95) 0%,rgba(255,255,255,.9) 55%,rgba(255,255,255,.2) 100%),
         url("job-search.png") center right 8% / 310px auto no-repeat;
-      padding: 70px 8%;
-      text-align: center;
+      padding:70px 8%;
+      text-align:center;
     }
 
-    .job-search .btn {
-      width: 470px;
-      margin: 28px auto 0;
+    .job-search .btn{
+      width:470px;
+      margin:28px auto 0;
     }
 
-    .medical-box {
-      max-width: 1120px;
-      margin: 0 auto;
+    .medical-box{
+      max-width:1120px;
+      margin:0 auto;
       background:
-        linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.72)),
+        linear-gradient(90deg,rgba(255,255,255,.92),rgba(255,255,255,.72)),
         url("hospital-staff.png") center / cover no-repeat;
-      border-radius: 12px;
-      padding: 44px 52px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+      border-radius:12px;
+      padding:44px 52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow:0 8px 22px rgba(0,0,0,.08);
     }
 
-    .medical-box h2 {
-      color: #129ca8;
-      font-size: 24px;
-      margin-bottom: 12px;
+    .medical-box h2{
+      color:#129ca8;
+      font-size:24px;
+      margin-bottom:12px;
     }
 
-    .outline-btn {
-      color: #129ca8;
-      border: 2px solid #19aab5;
-      border-radius: 999px;
-      padding: 14px 28px;
-      font-weight: 700;
-      background: #fff;
-      white-space: nowrap;
+    .outline-btn{
+      color:#129ca8;
+      border:2px solid #19aab5;
+      border-radius:999px;
+      padding:14px 28px;
+      font-weight:700;
+      background:#fff;
+      white-space:nowrap;
     }
 
-    .bottom-links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      max-width: 920px;
-      margin: 56px auto 0;
+    .bottom-links{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      max-width:920px;
+      margin:56px auto 0;
     }
 
-    .bottom-link {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      justify-content: center;
+    .bottom-link{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      justify-content:center;
+      background:#fff;
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 8px 22px rgba(0,0,0,.08);
     }
 
-    .bottom-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #27c2c9, #0da4af);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 28px;
-      font-weight: 700;
+    .bottom-icon{
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#27c2c9,#0da4af);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:28px;
+      font-weight:700;
+      flex-shrink:0;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-      font-size: 13px;
-      background: #f8fafa;
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#777;
+      font-size:13px;
+      background:#f8fafa;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 22px;
-        padding: 28px 18px 20px;
+    @media (max-width:768px){
+      header{
+        flex-direction:column;
+        gap:22px;
+        padding:28px 18px 20px;
       }
 
-      .logo img {
-        width: 250px;
+      .logo img{width:250px}
+
+      nav{
+        width:100%;
+        justify-content:space-between;
+        gap:0;
+        font-size:15px;
       }
 
-      nav {
-        width: 100%;
-        justify-content: space-between;
-        gap: 0;
-        font-size: 15px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 44px 24px 360px;
+      .hero{
+        min-height:auto;
+        padding:44px 24px 360px;
         background:
-          linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.85) 50%, rgba(255,255,255,.25) 100%),
+          linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.85) 50%,rgba(255,255,255,.25) 100%),
           url("hero.png") center bottom / cover no-repeat;
       }
 
-      .hero h1 {
-        font-size: 34px;
-      }
+      .hero h1{font-size:34px}
+      .hero p{font-size:15px}
+      .hero-buttons{width:100%}
+      .btn{font-size:17px}
 
-      .hero p {
-        font-size: 15px;
-      }
+      section{padding:56px 22px}
+      .section-title{font-size:28px}
 
-      .hero-buttons {
-        width: 100%;
-      }
+      .features{grid-template-columns:1fr}
 
-      .btn {
-        font-size: 17px;
-      }
-
-      section {
-        padding: 56px 22px;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .job-search {
-        padding-bottom: 300px;
+      .job-search{
+        padding-bottom:300px;
         background:
-          linear-gradient(180deg, rgba(238,251,253,.96), rgba(255,255,255,.78)),
+          linear-gradient(180deg,rgba(238,251,253,.96),rgba(255,255,255,.78)),
           url("job-search.png") center bottom / 280px auto no-repeat;
       }
 
-      .job-search .btn {
-        width: 100%;
+      .job-search .btn{width:100%}
+
+      .medical-box{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:24px;
+        padding:32px 24px;
       }
 
-      .medical-box {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-        padding: 32px 24px;
+      .outline-btn{
+        width:100%;
+        text-align:center;
       }
 
-      .outline-btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .bottom-links {
-        grid-template-columns: 1fr;
-        gap: 26px;
+      .bottom-links{
+        grid-template-columns:1fr;
+        gap:26px;
       }
     }
   </style>
@@ -344,109 +286,109 @@
 
 <body>
 
-  <header>
-    <a href="index.html" class="logo">
-      <img src="logo.png" alt="OKAメディカルネクスト">
-    </a>
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="OKAメディカルネクスト">
+  </a>
 
-    <nav>
-      <a href="#jobs">求人を探す</a>
-      <a href="medical.html">医療機関の方へ</a>
-      <a href="#contact">お問い合わせ</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="jobs.html">求人を探す</a>
+    <a href="medical.html">医療機関の方へ</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>
-        <span class="pink">あなたらしく</span><br>
-        <span class="teal">働ける職場探し</span>を。
-      </h1>
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      <span class="pink">あなたらしく</span><br>
+      <span class="teal">働ける職場探し</span>を。
+    </h1>
 
-      <p>
-        OKAメディカルネクストは、看護師向け求人情報サイトです。<br>
-        求人情報と転職に役立つ情報を提供し、<br>
-        医療人材の次の一歩を応援します。
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-pink">👤 看護師無料登録　›</a>
-        <a href="medical.html" class="btn btn-teal">🏥 医療機関の求人掲載申込　›</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">OKAメディカルネクストとは</h2>
-    <div class="section-line"></div>
-    <p class="section-lead">
-      看護師の皆さまが「自分らしく働ける職場」に出会えるよう、<br>
-      信頼できる求人情報とサポートを提供します。
+    <p>
+      OKAメディカルネクストは、看護師向け求人情報サイトです。<br>
+      求人情報と転職に役立つ情報を提供し、<br>
+      医療人材の次の一歩を応援します。
     </p>
 
-    <div class="features">
-      <div class="feature-card">
-        <div class="icon-circle pink-bg">📋</div>
-        <h3>看護師向け求人情報</h3>
-        <p>病院、クリニック、訪問看護、介護施設など、全国の求人をご紹介します。</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-circle teal-bg">🤝</div>
-        <h3>転職サポート</h3>
-        <p>経験豊富なスタッフが転職活動を丁寧にサポートします。</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-circle pink-bg">🗾</div>
-        <h3>全国登録に対応</h3>
-        <p>全国各地の求人に対応。地域に密着した情報をお届けします。</p>
-      </div>
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn btn-pink">看護師無料登録　›</a>
+      <a href="medical.html" class="btn btn-teal">医療機関の求人掲載申込　›</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="jobs" class="job-search">
-    <h2 class="section-title">求人を探す</h2>
-    <div class="section-line"></div>
-    <p>ご希望の条件から、あなたに合った求人を見つけましょう。</p>
-    <a href="#" class="btn btn-teal">🔍 求人を検索する　›</a>
-  </section>
+<section>
+  <h2 class="section-title">OKAメディカルネクストとは</h2>
+  <div class="section-line"></div>
+  <p class="section-lead">
+    看護師の皆さまが「自分らしく働ける職場」に出会えるよう、<br>
+    信頼できる求人情報とサポートを提供します。
+  </p>
 
-  <section>
-    <div class="medical-box">
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon-circle pink-bg">📋</div>
+      <h3>看護師向け求人情報</h3>
+      <p>病院、クリニック、訪問看護、介護施設など、全国の求人をご紹介します。</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle teal-bg">🤝</div>
+      <h3>転職サポート</h3>
+      <p>経験豊富なスタッフが転職活動を丁寧にサポートします。</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon-circle pink-bg">🗾</div>
+      <h3>全国登録に対応</h3>
+      <p>全国各地の求人に対応。地域に密着した情報をお届けします。</p>
+    </div>
+  </div>
+</section>
+
+<section class="job-search">
+  <h2 class="section-title">求人を探す</h2>
+  <div class="section-line"></div>
+  <p>ご希望の条件から、あなたに合った求人を見つけましょう。</p>
+  <a href="jobs.html" class="btn btn-teal">求人を検索する　›</a>
+</section>
+
+<section>
+  <div class="medical-box">
+    <div>
+      <h2>医療機関の皆様へ</h2>
+      <p>
+        看護師採用に取り組む医療機関様を支援します。<br>
+        職場の魅力を分かりやすく届け、採用活動をサポートします。
+      </p>
+    </div>
+
+    <a href="medical.html" class="outline-btn">求人掲載について詳しく見る　›</a>
+  </div>
+
+  <div class="bottom-links">
+    <a href="contact.html" class="bottom-link">
+      <div class="bottom-icon">✉</div>
       <div>
-        <h2>医療機関の皆様へ</h2>
-        <p>
-          看護師採用に取り組む医療機関様を支援します。<br>
-          職場の魅力を分かりやすく届け、採用活動をサポートします。
-        </p>
+        <strong>お問い合わせ</strong><br>
+        お気軽にご相談ください。
       </div>
+    </a>
 
-      <a href="medical.html" class="outline-btn">求人掲載について詳しく見る　›</a>
-    </div>
+    <a href="jobs.html" class="bottom-link">
+      <div class="bottom-icon">🔍</div>
+      <div>
+        <strong>求人を探す</strong><br>
+        求人情報はこちら。
+      </div>
+    </a>
+  </div>
+</section>
 
-    <div id="contact" class="bottom-links">
-      <a href="#" class="bottom-link">
-        <div class="bottom-icon">✉</div>
-        <div>
-          <strong>お問い合わせ</strong><br>
-          お気軽にご相談ください。
-        </div>
-      </a>
-
-      <a href="#" class="bottom-link">
-        <div class="bottom-icon">?</div>
-        <div>
-          <strong>よくあるご質問</strong><br>
-          よくあるご質問はこちら。
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    © OKA Medical Next
-  </footer>
+<footer>
+  © OKA Medical Next
+</footer>
 
 </body>
 </html>
