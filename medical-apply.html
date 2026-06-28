@@ -243,17 +243,43 @@ input{
 </a>
              <script>
 function selectPlan(plan){
-  const cards = document.querySelectorAll('.plan-price-card');
-  cards.forEach(card => card.classList.remove('selected'));
+  const radio = document.querySelector('input[name="plan"][value="' + plan + '"]');
 
-  if(plan === 'standard'){
-    cards[0].classList.add('selected');
+  if(radio){
+    radio.checked = true;
   }
 
-  if(plan === 'premium'){
-    cards[1].classList.add('selected');
+  updatePaymentLink(plan);
+
+  document.getElementById('apply-form').scrollIntoView({
+    behavior:'smooth'
+  });
+}
+
+function updatePaymentLink(plan){
+  const paymentLink = document.getElementById("paymentLink");
+
+  if(paymentLink){
+    paymentLink.href = "payment.html?plan=" + plan;
   }
 }
+
+const params = new URLSearchParams(window.location.search);
+const initialPlan = params.get("plan") || "standard";
+
+const initialRadio = document.querySelector('input[name="plan"][value="' + initialPlan + '"]');
+
+if(initialRadio){
+  initialRadio.checked = true;
+}
+
+updatePaymentLink(initialPlan);
+
+document.querySelectorAll('input[name="plan"]').forEach(function(radio){
+  radio.addEventListener("change", function(){
+    updatePaymentLink(this.value);
+  });
+});
 </script>
 </button>
 </a>
@@ -297,7 +323,11 @@ function selectPlan(plan){
   お支払い手続きへ進む
 </a>
       </div>
-
+<div class="center">
+  <a id="paymentLink" href="payment.html?plan=standard" class="btn">
+    お支払い手続きへ進む
+  </a>
+</div>
     </form>
 
     <p class="note">
