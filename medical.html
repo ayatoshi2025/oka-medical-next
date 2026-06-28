@@ -238,8 +238,106 @@
       margin-bottom: 6px;
     }
 
-    .flow {
+    .premium-section {
       background: #fff;
+    }
+
+    .premium-card {
+      max-width: 980px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #ffffff, #f8fdfe);
+      border: 2px solid #d7f0f3;
+      border-radius: 30px;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.10);
+      overflow: hidden;
+    }
+
+    .premium-top {
+      background:
+        linear-gradient(135deg, rgba(20,151,163,0.95), rgba(17,167,184,0.88)),
+        url("hospital-staff.png") center / cover no-repeat;
+      color: #fff;
+      padding: 38px 36px;
+    }
+
+    .premium-label {
+      display: inline-block;
+      background: #fff;
+      color: #1497a3;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+
+    .premium-top h3 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      line-height: 1.35;
+    }
+
+    .premium-top p {
+      margin: 0;
+      max-width: 720px;
+    }
+
+    .premium-body {
+      padding: 34px;
+    }
+
+    .premium-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .premium-item {
+      background: #f3fcfd;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .premium-item strong {
+      display: block;
+      color: #1497a3;
+      margin-bottom: 6px;
+    }
+
+    .premium-detail {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .premium-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .premium-box h4 {
+      margin: 0 0 12px;
+      color: #1497a3;
+      font-size: 1.2rem;
+    }
+
+    .premium-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .premium-cta {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .flow {
+      background: linear-gradient(180deg, #eefbfc 0%, #ffffff 100%);
     }
 
     .flow-steps {
@@ -331,7 +429,6 @@
       }
 
       .logo-area { font-size: 1.05rem; }
-
       .logo-area img { width: 54px; }
 
       nav {
@@ -362,18 +459,24 @@
 
       .cards,
       .flow-steps,
-      .sample-info {
+      .sample-info,
+      .premium-grid,
+      .premium-detail {
         grid-template-columns: 1fr;
       }
 
       .sample-head,
-      .sample-body {
+      .sample-body,
+      .premium-top,
+      .premium-body {
         padding: 24px 22px;
       }
 
-      .btn {
-        width: 100%;
+      .premium-top h3 {
+        font-size: 1.55rem;
       }
+
+      .btn { width: 100%; }
 
       .cta-buttons {
         flex-direction: column;
@@ -447,7 +550,7 @@
 
   <section class="sample-section">
     <div class="section-inner">
-      <h2 class="section-title">掲載サンプル</h2>
+      <h2 class="section-title">通常掲載サンプル</h2>
       <div class="title-line"></div>
       <p class="lead">
         求人情報は、看護師の方が働くイメージを持ちやすい形で掲載します。
@@ -461,31 +564,85 @@
 
         <div class="sample-body">
           <div class="sample-info">
-            <div>
-              <strong>勤務地</strong>
-              東京都内
-            </div>
-            <div>
-              <strong>雇用形態</strong>
-              正社員
-            </div>
-            <div>
-              <strong>給与目安</strong>
-              月給30万円〜
-            </div>
-            <div>
-              <strong>働き方</strong>
-              日勤中心・外来業務
-            </div>
+            <div><strong>勤務地</strong>東京都内</div>
+            <div><strong>雇用形態</strong>正社員</div>
+            <div><strong>給与目安</strong>月給30万円〜</div>
+            <div><strong>働き方</strong>日勤中心・外来業務</div>
           </div>
 
           <p>
             患者様に寄り添った外来看護を大切にしているクリニックです。
-            職場の雰囲気、勤務条件、求める人物像などを分かりやすく掲載し、
-            看護師の方が応募前に安心して検討できるページを目指します。
+            職場の雰囲気、勤務条件、求める人物像などを分かりやすく掲載します。
           </p>
 
           <a href="jobs.html" class="btn btn-primary">求人ページを見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section">
+    <div class="section-inner">
+      <h2 class="section-title">プレミアム掲載サンプル</h2>
+      <div class="title-line"></div>
+      <p class="lead">
+        医療機関様の魅力をより詳しく伝える、特別な掲載イメージです。
+      </p>
+
+      <div class="premium-card">
+        <div class="premium-top">
+          <span class="premium-label">PREMIUM SAMPLE</span>
+          <h3>〇〇総合病院｜病棟看護師</h3>
+          <p>
+            教育体制・福利厚生・職場の雰囲気まで、看護師の方が応募前に安心して検討できるよう、
+            医療機関様の魅力を丁寧に掲載します。
+          </p>
+        </div>
+
+        <div class="premium-body">
+          <div class="premium-grid">
+            <div class="premium-item">
+              <strong>月給</strong>
+              35万円〜
+            </div>
+            <div class="premium-item">
+              <strong>休日</strong>
+              年間休日125日
+            </div>
+            <div class="premium-item">
+              <strong>福利厚生</strong>
+              託児所あり
+            </div>
+            <div class="premium-item">
+              <strong>特徴</strong>
+              教育制度充実
+            </div>
+          </div>
+
+          <div class="premium-detail">
+            <div class="premium-box">
+              <h4>職場紹介</h4>
+              <p>
+                急性期から回復期まで幅広い看護経験を積める総合病院です。
+                新人教育、復職支援、子育て中の看護師へのサポートなど、
+                長く働きやすい環境づくりに取り組んでいます。
+              </p>
+            </div>
+
+            <div class="premium-box">
+              <h4>アピールポイント</h4>
+              <ul>
+                <li>院内研修制度あり</li>
+                <li>住宅手当あり</li>
+                <li>託児所完備</li>
+                <li>ブランク歓迎</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="premium-cta">
+            <a href="contact.html" class="btn btn-primary">このような掲載を相談する</a>
+          </div>
         </div>
       </div>
     </div>
