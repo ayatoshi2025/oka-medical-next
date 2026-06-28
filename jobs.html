@@ -603,6 +603,99 @@ nav a{
     font-size:14px;
   }
 }
+</head><style>
+    /* ===== 求人ページ スマホ最終調整 ===== */
+    @media (max-width: 768px){
+      header{
+        padding:28px 16px 18px;
+      }
+
+      .logo img{
+        width:260px;
+        max-width:85%;
+        height:auto;
+        margin:0 auto 22px;
+      }
+
+      nav{
+        display:flex;
+        justify-content:center;
+        gap:24px;
+        flex-wrap:nowrap;
+      }
+
+      nav a{
+        font-size:17px;
+        font-weight:700;
+        white-space:nowrap;
+      }
+
+      .page-title{
+        min-height:0 !important;
+        height:auto !important;
+        padding:0 !important;
+        background:
+          linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.18)),
+          url("jobs-hero.png") center top / 100% auto no-repeat !important;
+      }
+
+      .page-title::before{
+        content:"";
+        display:block;
+        width:100%;
+        aspect-ratio:16 / 10;
+      }
+
+      .page-title-text{
+        position:static !important;
+        transform:none !important;
+        width:auto !important;
+        max-width:none !important;
+        margin:48px 24px 0 !important;
+        padding:28px 24px !important;
+        background:rgba(255,255,255,0.96);
+        border-radius:22px;
+        box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      }
+
+      .page-title h1{
+        font-size:34px;
+        line-height:1.35;
+        margin:8px 0 18px;
+        color:#139aaa;
+      }
+
+      .page-title-text p{
+        font-size:16px;
+        line-height:1.9;
+      }
+
+      section{
+        padding:48px 24px;
+      }
+
+      section:first-of-type{
+        padding-top:42px !important;
+      }
+
+      .search-box{
+        padding:28px 22px;
+        border-radius:22px;
+        background:#f3fcfd;
+      }
+
+      .filter h2{
+        font-size:22px;
+        margin-bottom:18px;
+      }
+
+      .tags button{
+        padding:10px 16px;
+        margin:6px;
+        font-size:14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
