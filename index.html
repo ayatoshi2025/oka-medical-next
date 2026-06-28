@@ -73,12 +73,12 @@
 
     .hero {
       min-height: 560px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.70) 42%, rgba(255,255,255,0.25) 100%),
-        url("hero.png") center top / cover no-repeat;
       display: flex;
       align-items: center;
       padding: 72px 20px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.58) 42%, rgba(255,255,255,0.18) 100%),
+        url("hero.png") center top / cover no-repeat;
     }
 
     .hero-inner {
@@ -93,7 +93,6 @@
       padding: 42px 38px;
       border-radius: 24px;
       box-shadow: 0 18px 44px rgba(0,0,0,0.10);
-      backdrop-filter: blur(2px);
     }
 
     .hero h1 {
@@ -119,7 +118,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 28px;
+      padding: 15px 28px;
       border-radius: 999px;
       font-weight: 800;
       transition: 0.2s;
@@ -183,11 +182,9 @@
       text-align: center;
     }
 
-    .icon {
-      font-size: 3rem;
-      color: #1497a3;
-      line-height: 1;
-      margin-bottom: 18px;
+    .card-icon {
+      font-size: 2.7rem;
+      margin-bottom: 14px;
     }
 
     .card h3 {
@@ -245,7 +242,7 @@
     }
 
     .contact {
-      background: linear-gradient(135deg, #e8fbfc, #fff);
+      background: linear-gradient(135deg, #e8fbfc, #fff0f5);
       text-align: center;
     }
 
@@ -286,7 +283,7 @@
         min-height: auto;
         padding: 52px 18px;
         background:
-          linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.76) 100%),
+          linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.72) 100%),
           url("hero.png") center top / cover no-repeat;
       }
 
@@ -344,7 +341,7 @@
 <body>
 
 <header>
-   <div class="header-inner">
+  <div class="header-inner">
     <a href="index.html" class="logo-area">
       <img src="logo.png" alt="OKAメディカルネクスト ロゴ">
       <span>OKAメディカルネクスト</span>
@@ -370,14 +367,14 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="nurse-register.html" class="btn btn-primary">看護師無料登録</a>
+          <a href="contact.html" class="btn btn-primary">看護師無料登録</a>
           <a href="medical.html" class="btn btn-secondary">医療機関の求人掲載申込</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="about">
+  <section>
     <div class="section-inner">
       <h2 class="section-title">OKAメディカルネクストとは</h2>
       <div class="title-line"></div>
@@ -387,19 +384,19 @@
 
       <div class="cards">
         <div class="card">
-          <div class="icon">⚕</div>
+          <div class="card-icon">🩺</div>
           <h3>看護師の転職を支援</h3>
           <p>働き方や勤務地など、ご希望に合わせた求人探しをサポートします。</p>
         </div>
 
         <div class="card">
-          <div class="icon">🏥</div>
+          <div class="card-icon">🏥</div>
           <h3>医療機関の採用を支援</h3>
           <p>職場の魅力を分かりやすく届け、採用活動を支援します。</p>
         </div>
 
         <div class="card">
-          <div class="icon">📍</div>
+          <div class="card-icon">📍</div>
           <h3>全国登録に対応</h3>
           <p>地域を問わず、看護師の方と医療機関からのご相談を受け付けています。</p>
         </div>
@@ -407,7 +404,7 @@
     </div>
   </section>
 
-  <section id="jobs" class="jobs-section">
+  <section class="jobs-section">
     <div class="section-inner">
       <h2 class="section-title">求人を探す</h2>
       <div class="title-line"></div>
