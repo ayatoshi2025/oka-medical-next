@@ -1,3 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>求人を探す｜OKAメディカルネクスト</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  background:#fff;
+  color:#333;
+  line-height:1.7;
+}
+
+header{
+  background:#fff;
+  padding:5px 5%;
+  border-bottom:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo img{
+  height:80px;
+  width:auto;
+}
+
+nav a{
+  margin-left:20px;
+  color:#333;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.page-title{
+  min-height:540px;
+  padding:70px 8% 60px;
+  display:flex;
+  align-items:flex-end;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.48) 42%, rgba(255,255,255,0.08) 100%),
+    url("jobs-hero.png") center center / contain no-repeat;
+}
+
+.page-title-text{
+  max-width:520px;
+  padding:20px 28px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.82);
+  box-shadow:0 6px 24px rgba(0,0,0,0.08);
+  transform:translateY(-80px);
+}
+
+.hero-note{
+  display:inline-block;
+  margin-bottom:8px;
+  color:#139aaa;
+  font-weight:bold;
+}
+
+.page-title h1{
+  color:#139aaa;
+  font-size:38px;
+  margin:0 0 12px;
+}
+
+.page-title-text p{
+  margin:0;
+  font-size:17px;
+}
+
+section{
+  padding:48px 8%;
+}
+
+.search-box{
+  max-width:980px;
+  margin:0 auto;
+  background:#f7fbfc;
+  border-radius:20px;
+  padding:30px;
+}
+
+.filters{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.filter h2{
+  margin:0 0 10px;
+  color:#139aaa;
+  font-size:20px;
+}
+
+.tags button{
+  display:inline-block;
+  padding:9px 14px;
+  margin:5px;
+  border-radius:999px;
+  border:1px solid transparent;
+  background:#e8fbfd;
+  color:#139aaa;
+  font-weight:bold;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.tags button.selected{
+  background:#22b8c8;
+  color:white;
+  border-color:#139aaa;
+}
+
+.selected-summary{
+  margin:22px 0 0;
+  color:#555;
+  font-size:14px;
+}
+
+.detail-group{
+  display:none;
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid #dceff2;
+}
+
+.detail-group.active{
+  display:block;
+}
+
+.detail-group h3{
+  margin:0 0 8px;
+  color:#555;
+  font-size:15px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.08);
+}
+
+.card h2{
+  margin:0 0 12px;
+  color:#139aaa;
+  font-size:22px;
+}
+
+.meta{
+  margin:0 0 18px;
+  color:#555;
+}
+
+.status{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#fff0f5;
+  color:#d45a7a;
+  font-weight:bold;
+  font-size:13px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  margin:6px;
+  border-radius:999px;
+  background:#22b8c8;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.btn.secondary{
+  background:#f58aa7;
+}
+
+.notice{
+  max-width:980px;
+  margin:0 auto;
+  background:#f5f5f5;
+  color:#666;
+  border-radius:12px;
+  padding:18px;
+  font-size:14px;
+}
+
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg,#e8fbfd,#fff0f5);
+}
+
+.cta p{
+  max-width:760px;
+  margin:0 auto 24px;
+}
+
+footer{
+  background:#233;
+  color:white;
+  text-align:center;
+  padding:35px 8%;
+}
+
+footer a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+/* ===== スマホ調整 ===== */
+@media (max-width:768px){
+
+  header{
+    flex-direction:column;
+    padding:28px 16px 18px;
+  }
+
+  .logo img{
+    width:260px;
+    max-width:85%;
+    height:auto;
+    display:block;
+    margin:0 auto 22px;
+  }
+
+  nav{
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:nowrap;
+  }
+
+  nav a{
+    margin:0;
+    font-size:17px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+
+  .page-title{
+    min-height:0;
+    height:auto;
+    padding:0;
+    display:block;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.18)),
+      url("jobs-hero.png") center top / 100% auto no-repeat;
+  }
+
+  .page-title::before{
+    content:"";
+    display:block;
+    width:100%;
+    aspect-ratio:16 / 10;
+  }
+
+  .page-title-text{
+    position:static;
+    transform:none;
+    width:auto;
+    max-width:none;
+    margin:48px 24px 0;
+    padding:28px 24px;
+    background:rgba(255,255,255,0.96);
+    border-radius:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .page-title h1{
+    font-size:34px;
+    line-height:1.35;
+    margin:8px 0 18px;
+  }
+
+  .page-title-text p{
+    font-size:16px;
+    line-height:1.9;
+  }
+
+  section{
+    padding:48px 24px;
+  }
+
+  section:first-of-type{
+    padding-top:42px;
+  }
+
+  .search-box{
+    padding:28px 22px;
+    border-radius:22px;
+    background:#f3fcfd;
+  }
+
+  .filters{
+    grid-template-columns:1fr;
+  }
+
+  .filter h2{
+    font-size:22px;
+    margin-bottom:18px;
+  }
+
+  .tags button{
+    padding:10px 16px;
+    margin:6px;
+    font-size:14px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .btn{
+    display:block;
+    max-width:320px;
+    margin:12px auto;
+    text-align:center;
+  }
+
+  footer a{
+    display:inline-block;
+    margin:6px 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.png" alt="OKAメディカルネクスト">
+    </a>
+  </div>
+
+  <nav>
+    <a href="jobs.html">求人を探す</a>
+    <a href="medical.html">医療機関の方へ</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="page-title-text">
+      <span class="hero-note">看護師向け求人情報</span>
+      <h1>求人を探す</h1>
+      <p>
+        OKAメディカルネクストでは、看護師の方に向けた求人情報を順次掲載予定です。
+        現在は掲載準備中のため、公開までしばらくお待ちください。
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <div class="search-box">
+      <div class="filters">
+        <div class="filter">
+          <h2>勤務地</h2>
+          <div class="tags">
+            <button type="button" data-area="全国">全国</button>
+            <button type="button" data-area="北海道・東北">北海道・東北</button>
+            <button type="button" data-area="関東">関東</button>
+            <button type="button" data-area="中部">中部</button>
+            <button type="button" data-area="関西">関西</button>
+            <button type="button" data-area="中国・四国">中国・四国</button>
+            <button type="button" data-area="九州・沖縄">九州・沖縄</button>
+          </div>
+          <div id="areaDetails" class="detail-group">
+            <h3>詳細エリア</h3>
+            <div class="tags detail-tags"></div>
+          </div>
+        </div>
+
+        <div class="filter">
+          <h2>施設形態</h2>
+          <div class="tags">
+            <button type="button">病院</button>
+            <button type="button">クリニック</button>
+            <button type="button">訪問看護</button>
+            <button type="button">介護施設</button>
+            <button type="button">健診</button>
+          </div>
+        </div>
+
+        <div class="filter">
+          <h2>雇用形態</h2>
+          <div class="tags">
+            <button type="button">正社員</button>
+            <button type="button">パート</button>
+            <button type="button">日勤のみ</button>
+            <button type="button">夜勤あり</button>
+            <button type="button">ブランク歓迎</button>
           </div>
         </div>
       </div>
@@ -13,7 +426,7 @@
         <p class="meta">
           勤務地：東京都内<br>
           雇用形態：正社員<br>
-          給与目安：月給30万円から
+          給与目安：月給30万円〜
         </p>
         <p>外来業務を中心としたクリニック求人を掲載予定です。</p>
       </div>
