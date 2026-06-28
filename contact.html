@@ -15,130 +15,75 @@ body{
   line-height:1.7;
 }
 
-header{
-  background:#fff;
-  padding:5px 5%;
-  border-bottom:1px solid #eee;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+header {
+  background: #fff;
+  padding: 14px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
-.logo img{
-  height:80px;
-  width:auto;
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-nav a{
-  margin-left:20px;
-  color:#333;
-  text-decoration:none;
-  font-weight:bold;
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1497a3;
+  font-weight: 800;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
-.container{
-  max-width:900px;
-  margin:50px auto;
-  padding:0 20px;
+.logo-area img {
+  width: 58px;
+  height: auto;
+  max-width: 58px;
 }
 
-.card{
-  background:#fff;
-  border-radius:24px;
-  padding:40px;
-  box-shadow:0 6px 24px rgba(0,0,0,0.08);
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.98rem;
+  font-weight: 800;
 }
 
-h1{
-  text-align:center;
-  color:#139aaa;
-  margin-bottom:10px;
+nav a {
+  color: #1497a3;
+  text-decoration: none;
 }
 
-.subtitle{
-  text-align:center;
-  color:#666;
-  margin-bottom:40px;
-}
-
-.form-group{
-  margin-bottom:25px;
-}
-
-label{
-  display:block;
-  margin-bottom:8px;
-  font-weight:bold;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #ddd;
-  border-radius:12px;
-  font-size:16px;
-  box-sizing:border-box;
-}
-
-textarea{
-  min-height:150px;
-  resize:vertical;
-}
-
-.btn{
-  display:inline-block;
-  padding:16px 36px;
-  border:none;
-  border-radius:999px;
-  background:#22b8c8;
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.center{
-  text-align:center;
-}
-
-.note{
-  margin-top:30px;
-  font-size:14px;
-  color:#666;
-  text-align:center;
-}
-
-.required{
-  color:#f44336;
-}
-
-.form-status{
-  margin-top:18px;
-  text-align:center;
-  font-weight:bold;
-}
-
-.form-status.success{
-  color:#139aaa;
-}
-
-.form-status.error{
-  color:#d93025;
-}
-
-@media (max-width:700px){
-  header{
-    display:block;
-    text-align:center;
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  nav a{
-    display:inline-block;
-    margin:6px;
+  .logo-area {
+    font-size: 1.05rem;
   }
 
+  .logo-area img {
+    width: 54px;
+    max-width: 54px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.86rem;
+  }
+}
   .card{
     padding:28px;
   }
