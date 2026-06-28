@@ -1,357 +1,375 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>求人を探す｜OKAメディカルネクスト</title>
 
-<title>求人を探す｜OKAメディカルネクスト</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:"Helvetica Neue",Arial,sans-serif;
-  background:#fff;
-  color:#333;
-  line-height:1.7;
-}
+    body {
+      font-family: "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.8;
+    }
 
-header{
-  background:#fff;
-  padding:5px 5%;
-  border-bottom:1px solid #eee;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.logo img{
-  height:80px;
-  width:auto;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-nav a{
-  margin-left:20px;
-  color:#333;
-  text-decoration:none;
-  font-weight:bold;
-}
+    header {
+      background: #fff;
+      padding: 26px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eef4f5;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
 
-.page-title{
-  min-height:540px;
-  padding:70px 8% 60px;
-  display:flex;
-  align-items:flex-end;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.48) 42%, rgba(255,255,255,0.08) 100%),
-    url("jobs-hero.png") center center / contain no-repeat;
-}
+    .logo img {
+      width: 260px;
+    }
 
-.page-title-text{
-  max-width:520px;
-  padding:20px 28px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.82);
-  box-shadow:0 6px 24px rgba(0,0,0,0.08);
-  transform:translateY(-80px);
-}
+    nav {
+      display: flex;
+      gap: 44px;
+      font-weight: 700;
+      font-size: 16px;
+    }
 
-.hero-note{
-  display:inline-block;
-  margin-bottom:8px;
-  color:#139aaa;
-  font-weight:bold;
-}
+    .page-hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      padding: 70px 9%;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 48%, rgba(255,255,255,.18) 100%),
+        url("job-search.png") center right / contain no-repeat,
+        linear-gradient(135deg, #f7fdff, #ffffff);
+    }
 
-.page-title h1{
-  color:#139aaa;
-  font-size:38px;
-  margin:0 0 12px;
-}
+    .hero-content {
+      max-width: 560px;
+    }
 
-.page-title-text p{
-  margin:0;
-  font-size:17px;
-}
+    .hero-note {
+      display: inline-block;
+      color: #ef7fa0;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
 
-section{
-  padding:48px 8%;
-}
+    .page-hero h1 {
+      font-size: 46px;
+      line-height: 1.35;
+      color: #129ca8;
+      margin-bottom: 22px;
+      font-weight: 800;
+    }
 
-.search-box{
-  max-width:980px;
-  margin:0 auto;
-  background:#f7fbfc;
-  border-radius:20px;
-  padding:30px;
-}
+    .page-hero p {
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
 
-.filters{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-}
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 16px 30px;
+      background: linear-gradient(135deg, #26c2c9, #0ea4b0);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 12px 24px rgba(0,0,0,.15);
+    }
 
-.filter h2{
-  margin:0 0 10px;
-  color:#139aaa;
-  font-size:20px;
-}
+    section {
+      padding: 64px 8%;
+    }
 
-.tags button{
-  display:inline-block;
-  padding:9px 14px;
-  margin:5px;
-  border-radius:999px;
-  border:1px solid transparent;
-  background:#e8fbfd;
-  color:#139aaa;
-  font-weight:bold;
-  font-size:14px;
-  cursor:pointer;
-}
+    .section-title {
+      text-align: center;
+      color: #129ca8;
+      font-size: 30px;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
 
-.tags button.selected{
-  background:#22b8c8;
-  color:white;
-  border-color:#139aaa;
-}
+    .section-line {
+      width: 38px;
+      height: 3px;
+      background: #f38aa8;
+      margin: 0 auto 28px;
+      border-radius: 999px;
+    }
 
-.selected-summary{
-  margin:22px 0 0;
-  color:#555;
-  font-size:14px;
-}
+    .section-lead {
+      text-align: center;
+      margin-bottom: 38px;
+    }
 
-.detail-group{
-  display:none;
-  margin-top:16px;
-  padding-top:14px;
-  border-top:1px solid #dceff2;
-}
+    .search-box {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: #f3fcfd;
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
 
-.detail-group.active{
-  display:block;
-}
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
 
-.detail-group h3{
-  margin:0 0 8px;
-  color:#555;
-  font-size:15px;
-}
+    .filter h2 {
+      color: #129ca8;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;
-  max-width:1100px;
-  margin:0 auto;
-}
+    .tags button {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 6px 4px;
+      border-radius: 999px;
+      border: none;
+      background: #fff;
+      color: #129ca8;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,.06);
+    }
 
-.card{
-  background:#fff;
-  border-radius:18px;
-  padding:26px;
-  box-shadow:0 6px 24px rgba(0,0,0,0.08);
-}
+    .tags button.selected {
+      background: #19aab5;
+      color: #fff;
+    }
 
-.card h2{
-  margin:0 0 12px;
-  color:#139aaa;
-  font-size:22px;
-}
+    .detail-group {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #d7eef1;
+    }
 
-.meta{
-  margin:0 0 18px;
-  color:#555;
-}
+    .detail-group.active {
+      display: block;
+    }
 
-.status{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  background:#fff0f5;
-  color:#d45a7a;
-  font-weight:bold;
-  font-size:13px;
-}
+    .detail-group h3 {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 8px;
+    }
 
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  margin:6px;
-  border-radius:999px;
-  background:#22b8c8;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
+    .selected-summary {
+      margin-top: 24px;
+      font-size: 15px;
+      color: #555;
+      text-align: center;
+    }
 
-.btn.secondary{
-  background:#f58aa7;
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
 
-.notice{
-  max-width:980px;
-  margin:0 auto;
-  background:#f5f5f5;
-  color:#666;
-  border-radius:12px;
-  padding:18px;
-  font-size:14px;
-}
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
 
-.cta{
-  text-align:center;
-  background:linear-gradient(135deg,#e8fbfd,#fff0f5);
-}
+    .status {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: #fff0f5;
+      color: #d45a7a;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
 
-.cta p{
-  max-width:760px;
-  margin:0 auto 24px;
-}
+    .card h2 {
+      color: #129ca8;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
 
-footer{
-  background:#233;
-  color:white;
-  text-align:center;
-  padding:35px 8%;
-}
+    .meta {
+      color: #555;
+      margin-bottom: 14px;
+    }
 
-footer a{
-  color:white;
-  margin:0 10px;
-  text-decoration:none;
-}
+    .notice {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #f8fafa;
+      border-left: 5px solid #19aab5;
+      border-radius: 14px;
+      padding: 20px 24px;
+      color: #666;
+      font-size: 14px;
+    }
 
-/* ===== スマホ調整 ===== */
-@media (max-width:768px){
+    .cta {
+      background: linear-gradient(135deg, #e8fbfd, #fff0f5);
+      text-align: center;
+    }
 
-  header{
-    flex-direction:column;
-    padding:28px 16px 18px;
-  }
+    .cta h2 {
+      color: #129ca8;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
 
-  .logo img{
-    width:260px;
-    max-width:85%;
-    height:auto;
-    display:block;
-    margin:0 auto 22px;
-  }
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 26px;
+    }
 
-  nav{
-    display:flex;
-    justify-content:center;
-    gap:24px;
-    flex-wrap:nowrap;
-  }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-  nav a{
-    margin:0;
-    font-size:17px;
-    font-weight:700;
-    white-space:nowrap;
-  }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 15px 28px;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 10px 22px rgba(0,0,0,.13);
+    }
 
-  .page-title{
-    min-height:0;
-    height:auto;
-    padding:0;
-    display:block;
-    background:
-      linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.18)),
-      url("jobs-hero.png") center top / 100% auto no-repeat;
-  }
+    .btn-pink {
+      background: linear-gradient(135deg, #f78cad, #ef7099);
+    }
 
-  .page-title::before{
-    content:"";
-    display:block;
-    width:100%;
-    aspect-ratio:16 / 10;
-  }
+    .btn-teal {
+      background: linear-gradient(135deg, #26c2c9, #0ea4b0);
+    }
 
-  .page-title-text{
-    position:static;
-    transform:none;
-    width:auto;
-    max-width:none;
-    margin:48px 24px 0;
-    padding:28px 24px;
-    background:rgba(255,255,255,0.96);
-    border-radius:22px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  }
+    footer {
+      text-align: center;
+      padding: 34px 8%;
+      color: #777;
+      font-size: 13px;
+      background: #f8fafa;
+    }
 
-  .page-title h1{
-    font-size:34px;
-    line-height:1.35;
-    margin:8px 0 18px;
-  }
+    footer a {
+      margin: 0 10px;
+      color: #129ca8;
+      font-weight: 700;
+    }
 
-  .page-title-text p{
-    font-size:16px;
-    line-height:1.9;
-  }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 22px;
+        padding: 28px 18px 20px;
+      }
 
-  section{
-    padding:48px 24px;
-  }
+      .logo img {
+        width: 250px;
+      }
 
-  section:first-of-type{
-    padding-top:42px;
-  }
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
+        font-size: 15px;
+      }
 
-  .search-box{
-    padding:28px 22px;
-    border-radius:22px;
-    background:#f3fcfd;
-  }
+      .page-hero {
+        min-height: auto;
+        padding: 42px 24px 320px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.88) 52%, rgba(255,255,255,.18) 100%),
+          url("job-search.png") center bottom / 300px auto no-repeat,
+          linear-gradient(135deg, #f7fdff, #ffffff);
+      }
 
-  .filters{
-    grid-template-columns:1fr;
-  }
+      .page-hero h1 {
+        font-size: 34px;
+      }
 
-  .filter h2{
-    font-size:22px;
-    margin-bottom:18px;
-  }
+      .page-hero p {
+        font-size: 15px;
+      }
 
-  .tags button{
-    padding:10px 16px;
-    margin:6px;
-    font-size:14px;
-  }
+      section {
+        padding: 52px 22px;
+      }
 
-  .cards{
-    grid-template-columns:1fr;
-  }
+      .section-title {
+        font-size: 28px;
+      }
 
-  .btn{
-    display:block;
-    max-width:320px;
-    margin:12px auto;
-    text-align:center;
-  }
+      .filters {
+        grid-template-columns: 1fr;
+      }
 
-  footer a{
-    display:inline-block;
-    margin:6px 8px;
-  }
-}
-</style>
+      .search-box {
+        padding: 28px 22px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn,
+      .hero-btn {
+        width: 100%;
+      }
+
+      footer a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="logo.png" alt="OKAメディカルネクスト">
-    </a>
-  </div>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="OKAメディカルネクスト">
+  </a>
 
   <nav>
     <a href="jobs.html">求人を探す</a>
@@ -361,20 +379,27 @@ footer a{
 </header>
 
 <main>
-  <div class="page-title">
-    <div class="page-title-text">
+
+  <section class="page-hero">
+    <div class="hero-content">
       <span class="hero-note">看護師向け求人情報</span>
-      <h1>求人を探す</h1>
+      <h1>あなたに合った<br>職場を探す</h1>
       <p>
         OKAメディカルネクストでは、看護師の方に向けた求人情報を順次掲載予定です。
-        現在は掲載準備中のため、公開までしばらくお待ちください。
+        勤務地・施設形態・働き方から、あなたに合った職場探しをサポートします。
       </p>
+      <a href="#search" class="hero-btn">条件から求人を探す　›</a>
     </div>
-  </div>
+  </section>
 
-  <section>
+  <section id="search">
+    <h2 class="section-title">求人検索</h2>
+    <div class="section-line"></div>
+    <p class="section-lead">希望条件を選択して、掲載予定の求人情報を確認できます。</p>
+
     <div class="search-box">
       <div class="filters">
+
         <div class="filter">
           <h2>勤務地</h2>
           <div class="tags">
@@ -386,6 +411,7 @@ footer a{
             <button type="button" data-area="中国・四国">中国・四国</button>
             <button type="button" data-area="九州・沖縄">九州・沖縄</button>
           </div>
+
           <div id="areaDetails" class="detail-group">
             <h3>詳細エリア</h3>
             <div class="tags detail-tags"></div>
@@ -413,12 +439,17 @@ footer a{
             <button type="button">ブランク歓迎</button>
           </div>
         </div>
+
       </div>
+
       <p id="selectedSummary" class="selected-summary">条件を選択できます。</p>
     </div>
   </section>
 
   <section>
+    <h2 class="section-title">掲載予定の求人</h2>
+    <div class="section-line"></div>
+
     <div class="cards">
       <div class="card">
         <span class="status">掲載準備中</span>
@@ -462,13 +493,17 @@ footer a{
   </section>
 
   <section class="cta">
-    <h2>医療機関の掲載をご検討の方へ</h2>
+    <h2>求人掲載をご検討の医療機関様へ</h2>
     <p>
-      掲載内容やプランについては、医療機関向けページまたはお問い合わせフォームよりご確認ください。
+      掲載内容やご相談については、医療機関向けページまたはお問い合わせフォームよりご確認ください。
     </p>
-    <a class="btn secondary" href="medical.html">医療機関向けページへ</a>
-    <a class="btn" href="contact.html">掲載について問い合わせる</a>
+
+    <div class="cta-buttons">
+      <a class="btn btn-pink" href="medical.html">医療機関向けページへ　›</a>
+      <a class="btn btn-teal" href="contact.html">掲載について問い合わせる　›</a>
+    </div>
   </section>
+
 </main>
 
 <footer>
@@ -496,32 +531,36 @@ const selectedSummary = document.getElementById("selectedSummary");
 const areaDetails = document.getElementById("areaDetails");
 const detailTags = areaDetails.querySelector(".detail-tags");
 
-function updateSummary(){
+function updateSummary() {
   const selected = Array.from(document.querySelectorAll(".tags button.selected"))
-    .map(function(item){ return item.textContent; });
+    .map(function(item) {
+      return item.textContent;
+    });
 
   selectedSummary.textContent = selected.length
     ? "選択中：" + selected.join(" / ")
     : "条件を選択できます。";
 }
 
-function renderAreaDetails(area){
+function renderAreaDetails(area) {
   detailTags.innerHTML = "";
 
-  if(!areaOptions[area] || area === "全国"){
+  if (!areaOptions[area] || area === "全国") {
     areaDetails.classList.remove("active");
     updateSummary();
     return;
   }
 
-  areaOptions[area].forEach(function(prefecture){
+  areaOptions[area].forEach(function(prefecture) {
     const button = document.createElement("button");
     button.type = "button";
     button.textContent = prefecture;
-    button.addEventListener("click", function(){
+
+    button.addEventListener("click", function() {
       button.classList.toggle("selected");
       updateSummary();
     });
+
     detailTags.appendChild(button);
   });
 
@@ -529,9 +568,13 @@ function renderAreaDetails(area){
 }
 
 const areaButtons = document.querySelectorAll("[data-area]");
-areaButtons.forEach(function(button){
-  button.addEventListener("click", function(){
-    areaButtons.forEach(function(item){ item.classList.remove("selected"); });
+
+areaButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    areaButtons.forEach(function(item) {
+      item.classList.remove("selected");
+    });
+
     button.classList.add("selected");
     renderAreaDetails(button.dataset.area);
     updateSummary();
@@ -539,8 +582,9 @@ areaButtons.forEach(function(button){
 });
 
 const tagButtons = document.querySelectorAll(".filter:not(:first-child) .tags button");
-tagButtons.forEach(function(button){
-  button.addEventListener("click", function(){
+
+tagButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
     button.classList.toggle("selected");
     updateSummary();
   });
