@@ -1,94 +1,266 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ｜OKAメディカルネクスト</title>
 
-<title>お問い合わせ｜OKAメディカルネクスト</title>
+  <style>
+    * { box-sizing: border-box; }
 
-<style>
-body{
-  margin:0;
-  font-family:"Helvetica Neue",Arial,sans-serif;
-  background:#f8fbfc;
-  color:#333;
-  line-height:1.7;
-}
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.8;
+    }
 
-header {
-  background: #fff;
-  padding: 14px 20px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
+    a { text-decoration: none; }
 
-.header-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #1497a3;
-  font-weight: 800;
-  font-size: 1.25rem;
-  white-space: nowrap;
-  text-decoration: none;
-}
+    header {
+      background: #fff;
+      padding: 14px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
 
-.logo-area img {
-  width: 58px;
-  height: auto;
-  max-width: 58px;
-}
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-nav {
-  display: flex;
-  gap: 28px;
-  font-size: 0.98rem;
-  font-weight: 800;
-}
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #1497a3;
+      font-weight: 800;
+      font-size: 1.25rem;
+      white-space: nowrap;
+    }
 
-nav a {
-  color: #1497a3;
-  text-decoration: none;
-}
+    .logo-area img {
+      width: 58px;
+      height: auto;
+    }
 
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
 
-  .logo-area {
-    font-size: 1.05rem;
-  }
+    nav a {
+      color: #1497a3;
+    }
 
-  .logo-area img {
-    width: 54px;
-    max-width: 54px;
-  }
+    .page-hero {
+      background: linear-gradient(135deg, #e8fbfc, #fff0f5);
+      padding: 70px 20px;
+      text-align: center;
+    }
 
-  nav {
-    width: 100%;
-    justify-content: space-between;
-    gap: 8px;
-    font-size: 0.86rem;
-  }
-}
-  .card{
-    padding:28px;
-  }
-}
-</style>
+    .page-hero h1 {
+      margin: 0;
+      color: #1497a3;
+      font-size: 2.4rem;
+      font-weight: 900;
+    }
+
+    .title-line {
+      width: 58px;
+      height: 4px;
+      background: #f08aaa;
+      border-radius: 999px;
+      margin: 18px auto 24px;
+    }
+
+    .page-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .contact-section {
+      padding: 72px 20px;
+      background: #f8fcfd;
+    }
+
+    .contact-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .form-card {
+      background: #fff;
+      border-radius: 26px;
+      padding: 42px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #1497a3;
+      font-weight: 800;
+    }
+
+    .required {
+      color: #ef7099;
+      font-size: 0.9rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #cfe8eb;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #1497a3;
+      box-shadow: 0 0 0 3px rgba(20,151,163,0.12);
+    }
+
+    .center {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 38px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #23c7cc, #11a7b8);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 12px 26px rgba(17,167,184,0.25);
+    }
+
+    .btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .form-status {
+      margin-top: 18px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .form-status.success {
+      color: #1497a3;
+    }
+
+    .form-status.error {
+      color: #d45a7a;
+    }
+
+    .note {
+      margin: 30px 0 0;
+      padding: 20px 22px;
+      background: #f8fafa;
+      border-left: 5px solid #1497a3;
+      border-radius: 14px;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    .note a {
+      color: #1497a3;
+      font-weight: 800;
+    }
+
+    footer {
+      background: #1497a3;
+      color: #fff;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 16px;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-area {
+        font-size: 1.05rem;
+      }
+
+      .logo-area img {
+        width: 54px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 0.86rem;
+      }
+
+      .page-hero {
+        padding: 54px 18px;
+      }
+
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-section {
+        padding: 58px 18px;
+      }
+
+      .form-card {
+        padding: 28px 22px;
+        border-radius: 22px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -108,67 +280,77 @@ nav a {
   </div>
 </header>
 
-<div class="container">
-  <div class="card">
+<main>
 
+  <section class="page-hero">
     <h1>お問い合わせ</h1>
-
-    <p class="subtitle">
-      OKAメディカルネクストへのお問い合わせはこちらからお願いいたします。
+    <div class="title-line"></div>
+    <p>
+      看護師の方、医療機関の方、求人掲載に関するご相談など、こちらからお問い合わせください。
     </p>
+  </section>
 
-    <form id="contactForm">
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div class="form-card">
 
-      <div class="form-group">
-        <label for="category">お問い合わせ種別 <span class="required">*</span></label>
-        <select id="category" name="お問い合わせ種別" required>
-          <option>医療機関からのお問い合わせ</option>
-          <option>看護師・求職者からのお問い合わせ</option>
-          <option>求人掲載について相談したい</option>
-          <option>その他</option>
-        </select>
+        <form id="contactForm">
+
+          <div class="form-group">
+            <label for="category">お問い合わせ種別 <span class="required">*</span></label>
+            <select id="category" name="お問い合わせ種別" required>
+              <option value="医療機関からのお問い合わせ">医療機関からのお問い合わせ</option>
+              <option value="看護師・求職者からのお問い合わせ">看護師・求職者からのお問い合わせ</option>
+              <option value="求人掲載について相談したい">求人掲載について相談したい</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="name">お名前・ご担当者名 <span class="required">*</span></label>
+            <input id="name" name="お名前・ご担当者名" type="text" placeholder="山田 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label for="organization">医療機関名</label>
+            <input id="organization" name="医療機関名" type="text" placeholder="〇〇病院・〇〇クリニック">
+          </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">*</span></label>
+            <input id="email" name="メールアドレス" type="email" placeholder="sample@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+            <textarea id="message" name="お問い合わせ内容" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+          </div>
+
+          <div class="center">
+            <button type="submit" class="btn">送信する</button>
+          </div>
+
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+
+        </form>
+
+        <p class="note">
+          ※送信ボタンを押すと、お問い合わせ内容が送信されます。<br>
+          ※お問い合わせ内容を確認後、担当よりご連絡いたします。<br>
+          ※メールでのお問い合わせは
+          <a href="mailto:info@okamedicalnext.jp">info@okamedicalnext.jp</a>
+          までご連絡ください。
+        </p>
+
       </div>
+    </div>
+  </section>
 
-      <div class="form-group">
-        <label for="name">お名前・ご担当者名 <span class="required">*</span></label>
-        <input id="name" name="お名前・ご担当者名" type="text" placeholder="山田 太郎" required>
-      </div>
+</main>
 
-      <div class="form-group">
-        <label for="organization">医療機関名</label>
-        <input id="organization" name="医療機関名" type="text" placeholder="〇〇病院・〇〇クリニック">
-      </div>
-
-      <div class="form-group">
-        <label for="email">メールアドレス <span class="required">*</span></label>
-        <input id="email" name="メールアドレス" type="email" placeholder="sample@example.com" required>
-      </div>
-
-      <div class="form-group">
-        <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-        <textarea id="message" name="お問い合わせ内容" placeholder="お問い合わせ内容をご記入ください" required></textarea>
-      </div>
-
-      <div class="center">
-        <button type="submit" class="btn">
-          送信する
-        </button>
-      </div>
-
-      <p id="formStatus" class="form-status" aria-live="polite"></p>
-
-    </form>
-
-    <p class="note">
-  ※送信ボタンを押すと、お問い合わせ内容が送信されます。<br>
-  ※お問い合わせ内容を確認後、担当よりご連絡いたします。<br>
-  ※上記内容以外のご質問も受け付けております。メールでのお問い合わせは
-  <a href="mailto:info@okamedicalnext.jp">info@okamedicalnext.jp</a>
-  までご連絡ください。
-</p>
-
-  </div>
-</div>
+<footer>
+  <p>&copy; OKA Medical Next. All Rights Reserved.</p>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
@@ -193,7 +375,8 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   const button = form.querySelector("button[type='submit']");
   const status = document.getElementById("formStatus");
 
-  const subject = `${category}`;
+  const subject = category;
+
   const templateParams = {
     to_email: CONTACT_EMAIL,
     reply_to: email,
