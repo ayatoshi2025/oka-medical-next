@@ -17,7 +17,6 @@ body{
 }
 
 a{text-decoration:none}
-img{max-width:100%;display:block}
 
 header{
   background:#fff;
@@ -49,29 +48,28 @@ header{
 
 .logo-area img{
   width:58px;
-  height:auto;
 }
 
 nav{
   display:flex;
   gap:28px;
-  font-size:0.98rem;
+  font-size:.98rem;
   font-weight:800;
 }
 
 nav a{color:#1497a3}
 
-.page-hero{
+.hero{
   min-height:560px;
   display:flex;
   align-items:center;
   padding:72px 20px;
   background:
-    linear-gradient(90deg,rgba(255,255,255,0.88) 0%,rgba(255,255,255,0.68) 45%,rgba(255,255,255,0.18) 100%),
+    linear-gradient(90deg,rgba(255,255,255,.88),rgba(255,255,255,.66),rgba(255,255,255,.18)),
     url("hospital-staff.png") center right/cover no-repeat;
 }
 
-.page-hero-inner{
+.hero-inner{
   max-width:1180px;
   width:100%;
   margin:0 auto;
@@ -79,30 +77,26 @@ nav a{color:#1497a3}
 
 .hero-box{
   max-width:620px;
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,.9);
   padding:42px 38px;
   border-radius:24px;
-  box-shadow:0 18px 44px rgba(0,0,0,0.10);
+  box-shadow:0 18px 44px rgba(0,0,0,.10);
 }
 
 .hero-note{
-  display:inline-block;
   color:#ef7fa0;
   font-weight:800;
-  margin-bottom:10px;
 }
 
-.page-hero h1{
-  margin:0 0 22px;
+.hero h1{
+  margin:12px 0 22px;
   font-size:2.75rem;
   line-height:1.35;
   color:#1497a3;
-  font-weight:900;
 }
 
-.page-hero p{
+.hero p{
   margin:0 0 30px;
-  font-size:1.05rem;
 }
 
 .btn{
@@ -117,7 +111,7 @@ nav a{color:#1497a3}
 .btn-primary{
   background:linear-gradient(135deg,#23c7cc,#11a7b8);
   color:#fff;
-  box-shadow:0 10px 24px rgba(17,167,184,0.25);
+  box-shadow:0 10px 24px rgba(17,167,184,.25);
 }
 
 .btn-secondary{
@@ -129,10 +123,12 @@ nav a{color:#1497a3}
 .btn-pink{
   background:linear-gradient(135deg,#f78cad,#ef7099);
   color:#fff;
-  box-shadow:0 10px 24px rgba(239,112,153,0.24);
+  box-shadow:0 10px 24px rgba(239,112,153,.24);
 }
 
-section{padding:72px 20px}
+section{
+  padding:72px 20px;
+}
 
 .section-inner{
   max-width:1180px;
@@ -141,9 +137,9 @@ section{padding:72px 20px}
 
 .section-title{
   margin:0;
-  font-size:2rem;
-  color:#1497a3;
   text-align:center;
+  color:#1497a3;
+  font-size:2rem;
   font-weight:900;
 }
 
@@ -159,7 +155,6 @@ section{padding:72px 20px}
   text-align:center;
   max-width:760px;
   margin:0 auto 40px;
-  font-size:1.03rem;
 }
 
 .cards{
@@ -172,7 +167,7 @@ section{padding:72px 20px}
   background:#fff;
   padding:30px;
   border-radius:22px;
-  box-shadow:0 12px 32px rgba(0,0,0,0.08);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
   text-align:center;
 }
 
@@ -182,33 +177,31 @@ section{padding:72px 20px}
 }
 
 .card h3{
-  margin:0 0 12px;
   color:#1497a3;
-  font-size:1.25rem;
+  margin:0 0 12px;
 }
 
 .plan-section{
-  background:linear-gradient(180deg,#eefbfc 0%,#ffffff 100%);
+  background:linear-gradient(180deg,#eefbfc,#fff);
 }
 
-.plan-price-box{
+.plan-box{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:24px;
-  margin-top:28px;
+  gap:26px;
 }
 
-.plan-price-card{
+.plan-card{
   background:#fff;
-  border-radius:24px;
-  padding:30px;
+  border-radius:26px;
+  padding:32px;
+  box-shadow:0 14px 36px rgba(0,0,0,.08);
   border:1px solid #d9eef1;
-  box-shadow:0 14px 34px rgba(0,0,0,0.08);
+  position:relative;
 }
 
-.plan-price-card.premium{
+.plan-card.premium{
   border:3px solid #f08aaa;
-  position:relative;
 }
 
 .recommend{
@@ -219,33 +212,25 @@ section{padding:72px 20px}
   color:#fff;
   padding:6px 16px;
   border-radius:999px;
-  font-size:0.85rem;
+  font-size:.85rem;
   font-weight:900;
 }
 
-.plan-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-bottom:15px;
-}
-
-.plan-header h3{
+.plan-card h3{
   margin:0;
   color:#1497a3;
-  font-size:1.35rem;
+  font-size:1.45rem;
 }
 
 .price{
+  color:#1497a3;
   font-size:1.8rem;
   font-weight:900;
-  color:#1497a3;
-  margin:16px 0 18px;
+  margin:18px 0;
 }
 
-.plan-price-card ul{
-  margin:0 0 24px;
+.plan-card ul{
+  margin:0 0 26px;
   padding-left:20px;
 }
 
@@ -259,145 +244,57 @@ section{padding:72px 20px}
   background:#fff;
 }
 
-.sample-card{
-  max-width:920px;
-  margin:0 auto;
+.sample-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+}
+
+.sample-link-card{
   background:#fff;
   border-radius:26px;
-  box-shadow:0 16px 40px rgba(0,0,0,0.09);
   overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,.09);
 }
 
 .sample-head{
-  background:linear-gradient(135deg,#23c7cc,#11a7b8);
-  color:#fff;
   padding:28px 32px;
+  color:#fff;
+}
+
+.sample-head.standard{
+  background:linear-gradient(135deg,#23c7cc,#11a7b8);
+}
+
+.sample-head.premium{
+  background:linear-gradient(135deg,#f78cad,#ef7099);
 }
 
 .sample-head span{
   display:inline-block;
-  background:rgba(255,255,255,0.22);
+  background:rgba(255,255,255,.22);
   padding:5px 12px;
   border-radius:999px;
-  font-size:0.85rem;
+  font-size:.85rem;
   font-weight:800;
   margin-bottom:10px;
 }
 
 .sample-head h3{
   margin:0;
-  font-size:1.7rem;
+  font-size:1.55rem;
 }
 
-.sample-body{padding:32px}
-
-.sample-info{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin-bottom:24px;
+.sample-body{
+  padding:30px;
 }
 
-.sample-info div{
-  background:#f3fcfd;
-  border-radius:16px;
-  padding:18px;
-}
-
-.sample-info strong{
-  display:block;
-  color:#1497a3;
-  margin-bottom:6px;
-}
-
-.premium-sample{
-  background:linear-gradient(180deg,#fff,#f8fcfd);
-}
-
-.premium-preview{
-  max-width:980px;
-  margin:0 auto;
-  background:#fff;
-  border-radius:30px;
-  box-shadow:0 20px 54px rgba(0,0,0,0.12);
-  overflow:hidden;
-  border:1px solid #d8f0f3;
-}
-
-.premium-visual{
-  min-height:300px;
-  padding:36px;
-  display:flex;
-  align-items:flex-end;
-  background:
-    linear-gradient(180deg,rgba(20,151,163,0.12),rgba(20,151,163,0.90)),
-    url("hospital-staff.png") center/cover no-repeat;
-  color:#fff;
-}
-
-.premium-badge{
-  display:inline-block;
-  background:#fff;
-  color:#1497a3;
-  font-weight:900;
-  padding:7px 16px;
-  border-radius:999px;
-  margin-bottom:14px;
-}
-
-.premium-visual h3{
-  margin:0 0 10px;
-  font-size:2rem;
-}
-
-.premium-content{padding:34px}
-
-.premium-summary{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-bottom:28px;
-}
-
-.premium-summary-item{
-  background:#f3fcfd;
-  border-radius:18px;
-  padding:18px;
-  text-align:center;
-}
-
-.premium-summary-item strong{
-  display:block;
-  color:#1497a3;
-  margin-bottom:6px;
-}
-
-.premium-layout{
-  display:grid;
-  grid-template-columns:1.2fr 0.8fr;
-  gap:22px;
-}
-
-.premium-box{
-  background:#fff;
-  border-radius:20px;
-  padding:24px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.06);
-  border:1px solid #edf5f6;
-}
-
-.premium-box h4{
-  margin:0 0 12px;
-  color:#1497a3;
-}
-
-.premium-box ul{
-  margin:0;
+.sample-body ul{
   padding-left:20px;
 }
 
 .flow{
-  background:linear-gradient(180deg,#eefbfc 0%,#ffffff 100%);
+  background:linear-gradient(180deg,#eefbfc,#fff);
 }
 
 .flow-steps{
@@ -410,7 +307,7 @@ section{padding:72px 20px}
   background:#fff;
   border-radius:20px;
   padding:26px;
-  box-shadow:0 10px 28px rgba(0,0,0,0.07);
+  box-shadow:0 10px 28px rgba(0,0,0,.07);
 }
 
 .step-number{
@@ -427,8 +324,8 @@ section{padding:72px 20px}
 }
 
 .step h3{
-  margin:0 0 10px;
   color:#1497a3;
+  margin:0 0 10px;
 }
 
 .notice{
@@ -439,7 +336,7 @@ section{padding:72px 20px}
   border-radius:14px;
   padding:20px 24px;
   color:#666;
-  font-size:0.92rem;
+  font-size:.92rem;
 }
 
 .cta{
@@ -460,7 +357,7 @@ footer{
   color:#fff;
   text-align:center;
   padding:28px 20px;
-  font-size:0.9rem;
+  font-size:.9rem;
 }
 
 @media(max-width:768px){
@@ -471,73 +368,57 @@ footer{
     align-items:flex-start;
   }
 
-  .logo-area{font-size:1.05rem}
-  .logo-area img{width:54px}
+  .logo-area{
+    font-size:1.05rem;
+  }
+
+  .logo-area img{
+    width:54px;
+  }
 
   nav{
     width:100%;
     justify-content:space-between;
     gap:8px;
-    font-size:0.86rem;
+    font-size:.86rem;
   }
 
-  .page-hero{
+  .hero{
     min-height:auto;
     padding:52px 18px;
     background:
-      linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,255,255,0.78)),
+      linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.78)),
       url("hospital-staff.png") center top/cover no-repeat;
   }
 
   .hero-box{
     padding:28px 22px;
-    border-radius:22px;
   }
 
-  .page-hero h1{font-size:2.1rem}
+  .hero h1{
+    font-size:2.1rem;
+  }
 
-  section{padding:58px 18px}
+  section{
+    padding:58px 18px;
+  }
 
-  .section-title{font-size:1.7rem}
+  .section-title{
+    font-size:1.7rem;
+  }
 
   .cards,
-  .plan-price-box,
-  .sample-info,
-  .premium-summary,
-  .premium-layout,
+  .plan-box,
+  .sample-links,
   .flow-steps{
     grid-template-columns:1fr;
   }
 
-  .plan-header{
-    display:block;
+  .btn{
+    width:100%;
   }
 
-  .plan-header .btn{
-    margin-top:14px;
-  }
-
-  .plan-actions{
-    flex-direction:column;
-  }
-
-  .btn{width:100%}
-
-  .premium-visual,
-  .premium-content,
-  .sample-head,
-  .sample-body{
-    padding:24px 22px;
-  }
-
-  .premium-visual{
-    min-height:260px;
-  }
-
-  .premium-visual h3{
-    font-size:1.55rem;
-  }
-
+  .plan-actions,
   .cta-buttons{
     flex-direction:column;
   }
@@ -564,8 +445,8 @@ footer{
 
 <main>
 
-<section class="page-hero">
-  <div class="page-hero-inner">
+<section class="hero">
+  <div class="hero-inner">
     <div class="hero-box">
       <span class="hero-note">医療機関の皆様へ</span>
       <h1>看護師採用を<br>サポートします</h1>
@@ -582,7 +463,9 @@ footer{
   <div class="section-inner">
     <h2 class="section-title">OKAメディカルネクストでできること</h2>
     <div class="title-line"></div>
-    <p class="lead">看護師に向けて、医療機関様の魅力や求人情報を分かりやすく届けます。</p>
+    <p class="lead">
+      看護師に向けて、医療機関様の魅力や求人情報を分かりやすく届けます。
+    </p>
 
     <div class="cards">
       <div class="card">
@@ -600,7 +483,7 @@ footer{
       <div class="card">
         <div class="card-icon">🤝</div>
         <h3>採用活動を支援</h3>
-        <p>看護師の方に情報が届きやすい導線を整え、採用活動の入口をサポートします。</p>
+        <p>求人掲載ページや申込導線を整え、採用活動の入口をサポートします。</p>
       </div>
     </div>
   </div>
@@ -610,17 +493,15 @@ footer{
   <div class="section-inner">
     <h2 class="section-title">掲載プラン</h2>
     <div class="title-line"></div>
-    <p class="lead">医療機関様の目的に合わせて、掲載プランをお選びいただけます。</p>
+    <p class="lead">
+      スタンダード掲載とプレミアム掲載をご用意しています。
+    </p>
 
-    <div class="plan-price-box">
+    <div class="plan-box">
 
-      <div class="plan-price-card">
-        <div class="plan-header">
-          <h3>スタンダードプラン</h3>
-        </div>
-
+      <div class="plan-card">
+        <h3>スタンダードプラン</h3>
         <p class="price">月額 10,000円<br><small>税込11,000円</small></p>
-
         <ul>
           <li>求人掲載 1件</li>
           <li>施設紹介ページ掲載</li>
@@ -628,20 +509,15 @@ footer{
         </ul>
 
         <div class="plan-actions">
-          <a href="apply.html?plan=standard#apply-form" class="btn btn-primary">このプランを選択</a>
-          <a href="payment.html?plan=standard" class="btn btn-secondary">請求書サンプル</a>
+          <a href="standard-sample.html" class="btn btn-secondary">掲載サンプルを見る</a>
+          <a href="medical-apply.html?plan=standard#apply-form" class="btn btn-primary">このプランを選択</a>
         </div>
       </div>
 
-      <div class="plan-price-card premium">
+      <div class="plan-card premium">
         <span class="recommend">おすすめ</span>
-
-        <div class="plan-header">
-          <h3>プレミアムプラン</h3>
-        </div>
-
+        <h3>プレミアムプラン</h3>
         <p class="price">月額 30,000円<br><small>税込33,000円</small></p>
-
         <ul>
           <li>求人掲載 最大5件</li>
           <li>施設紹介ページ掲載</li>
@@ -653,8 +529,8 @@ footer{
         </ul>
 
         <div class="plan-actions">
-          <a href="apply.html?plan=premium#apply-form" class="btn btn-pink">このプランを選択</a>
-          <a href="payment.htmll?plan=premium" class="btn btn-secondary">請求書サンプル</a>
+          <a href="premium-sample.html" class="btn btn-secondary">掲載サンプルを見る</a>
+          <a href="medical-apply.html?plan=premium#apply-form" class="btn btn-pink">このプランを選択</a>
         </div>
       </div>
 
@@ -664,84 +540,52 @@ footer{
 
 <section class="sample-section">
   <div class="section-inner">
-    <h2 class="section-title">通常掲載サンプル</h2>
+    <h2 class="section-title">掲載サンプル</h2>
     <div class="title-line"></div>
-    <p class="lead">求人情報は、看護師の方が働くイメージを持ちやすい形で掲載します。</p>
+    <p class="lead">
+      実際の掲載イメージは、以下のサンプルページから確認できます。
+    </p>
 
-    <div class="sample-card">
-      <div class="sample-head">
-        <span>掲載イメージ</span>
-        <h3>東京都内クリニック｜外来看護師</h3>
-      </div>
+    <div class="sample-links">
 
-      <div class="sample-body">
-        <div class="sample-info">
-          <div><strong>勤務地</strong>東京都内</div>
-          <div><strong>雇用形態</strong>正社員</div>
-          <div><strong>給与目安</strong>月給30万円〜</div>
-          <div><strong>働き方</strong>日勤中心・外来業務</div>
+      <div class="sample-link-card">
+        <div class="sample-head standard">
+          <span>STANDARD SAMPLE</span>
+          <h3>スタンダード掲載サンプル</h3>
         </div>
-
-        <p>
-          患者様に寄り添った外来看護を大切にしているクリニックです。
-          職場の雰囲気、勤務条件、求める人物像などを分かりやすく掲載します。
-        </p>
-
-        <a href="jobs.html" class="btn btn-primary">求人ページを見る</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="premium-sample">
-  <div class="section-inner">
-    <h2 class="section-title">プレミアム掲載サンプル</h2>
-    <div class="title-line"></div>
-    <p class="lead">写真・特徴・職場データまでしっかり伝える掲載イメージです。</p>
-
-    <div class="premium-preview">
-      <div class="premium-visual">
-        <div>
-          <span class="premium-badge">PREMIUM 掲載イメージ</span>
-          <h3>〇〇総合病院｜病棟看護師</h3>
-          <p>教育体制・福利厚生・職場の雰囲気まで、応募前に安心して検討できるページを想定しています。</p>
+        <div class="sample-body">
+          <p>
+            基本的な求人情報を分かりやすく掲載するプランです。
+          </p>
+          <ul>
+            <li>募集職種</li>
+            <li>勤務地・給与・勤務時間</li>
+            <li>仕事内容</li>
+            <li>施設からのメッセージ</li>
+          </ul>
+          <a href="standard-sample.html" class="btn btn-primary">サンプルを見る</a>
         </div>
       </div>
 
-      <div class="premium-content">
-        <div class="premium-summary">
-          <div class="premium-summary-item"><strong>月給</strong>35万円〜</div>
-          <div class="premium-summary-item"><strong>休日</strong>年間休日125日</div>
-          <div class="premium-summary-item"><strong>福利厚生</strong>託児所あり</div>
-          <div class="premium-summary-item"><strong>特徴</strong>教育制度充実</div>
+      <div class="sample-link-card">
+        <div class="sample-head premium">
+          <span>PREMIUM SAMPLE</span>
+          <h3>プレミアム掲載サンプル</h3>
         </div>
-
-        <div class="premium-layout">
-          <div class="premium-box">
-            <h4>職場紹介</h4>
-            <p>
-              急性期から回復期まで幅広い看護経験を積める総合病院です。
-              新人教育、復職支援、子育て中の看護師へのサポートなど、
-              長く働きやすい環境づくりに取り組んでいます。
-            </p>
-          </div>
-
-          <div class="premium-box">
-            <h4>アピールポイント</h4>
-            <ul>
-              <li>院内研修制度あり</li>
-              <li>住宅手当あり</li>
-              <li>託児所完備</li>
-              <li>ブランク歓迎</li>
-              <li>子育て世代も活躍中</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="text-align:center;margin-top:30px;">
-          <a href="apply.html?plan=premium#apply-form" class="btn btn-pink">プレミアム掲載を申し込む</a>
+        <div class="sample-body">
+          <p>
+            写真・スタッフ紹介・職場データなど、職場の魅力をしっかり届ける採用広報型の掲載です。
+          </p>
+          <ul>
+            <li>施設ギャラリー</li>
+            <li>院長メッセージ</li>
+            <li>スタッフ紹介</li>
+            <li>福利厚生・1日の流れ</li>
+          </ul>
+          <a href="premium-sample.html" class="btn btn-pink">サンプルを見る</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -752,10 +596,29 @@ footer{
     <div class="title-line"></div>
 
     <div class="flow-steps">
-      <div class="step"><div class="step-number">1</div><h3>お問い合わせ</h3><p>お問い合わせフォームより、掲載希望内容をご連絡ください。</p></div>
-      <div class="step"><div class="step-number">2</div><h3>内容確認</h3><p>求人内容や施設情報を確認し、掲載内容を整理します。</p></div>
-      <div class="step"><div class="step-number">3</div><h3>求人掲載</h3><p>サイト内に求人情報を掲載し、求職者へ分かりやすく発信します。</p></div>
-      <div class="step"><div class="step-number">4</div><h3>応募導線の案内</h3><p>お問い合わせや応募につながる導線を整えます。</p></div>
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>プラン選択</h3>
+        <p>掲載プランとサンプルページをご確認ください。</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>申込フォーム送信</h3>
+        <p>医療機関情報や希望プランを送信します。</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>内容確認</h3>
+        <p>求人内容や施設情報を確認し、掲載内容を整理します。</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>掲載開始</h3>
+        <p>掲載内容の確認後、求人ページを公開します。</p>
+      </div>
     </div>
 
     <div class="notice">
@@ -768,10 +631,12 @@ footer{
   <div class="section-inner">
     <h2 class="section-title">求人掲載をご検討中の医療機関様へ</h2>
     <div class="title-line"></div>
-    <p class="lead">掲載内容や採用に関するご相談は、お問い合わせフォームよりご連絡ください。</p>
+    <p class="lead">
+      掲載サンプルをご確認のうえ、ご希望のプランからお申し込みください。
+    </p>
 
     <div class="cta-buttons">
-      <a href="apply.html#apply-form" class="btn btn-primary">求人掲載を申し込む</a>
+      <a href="medical-apply.html#apply-form" class="btn btn-primary">求人掲載を申込む</a>
       <a href="contact.html" class="btn btn-secondary">お問い合わせする</a>
     </div>
   </div>
