@@ -71,36 +71,27 @@
     }
 
     .hero {
-  .hero {
-  position: relative;
-  min-height: 520px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  padding: 70px 20px;
-}
+      min-height: 520px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.92), rgba(255,255,255,0.48)),
+        url("hero.png") center top / cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 70px 20px;
+    }
 
-.hero-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  z-index: -2;
-}
+    .hero-inner {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0.90) 0%,
-    rgba(255,255,255,0.65) 45%,
-    rgba(255,255,255,0.15) 100%
-  );
-  z-index: -1;
+    .hero-box {
+      max-width: 560px;
+      background: rgba(255,255,255,0.84);
+      padding: 34px;
+      border-radius: 22px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
     }
 
     .hero h1 {
@@ -282,13 +273,12 @@
       }
 
       .hero {
-  min-height: auto;.hero {
-  min-height: auto;
-  padding: 52px 18px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72)),
-    url("hero.png") center 70%/cover no-repeat;
-}
+        min-height: auto;
+        padding: 52px 18px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.93), rgba(255,255,255,0.72)),
+          url("hero.png") center top / cover no-repeat;
+      }
 
       .hero-box {
         padding: 26px 22px;
@@ -364,15 +354,8 @@
 
   <main>
 
-   <section class="hero">
-
-  <img
-    src="hero.png"
-    alt="看護師"
-    class="hero-image"
-  >
-
-  <div class="hero-inner">
+    <section class="hero">
+      <div class="hero-inner">
         <div class="hero-box">
           <h1>あなたらしく働ける職場探しを。</h1>
           <p>
