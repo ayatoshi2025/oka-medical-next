@@ -1,284 +1,346 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>医療機関の皆様へ｜OKAメディカルネクスト</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>医療機関の方へ｜OKAメディカルネクスト</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Helvetica Neue", Arial, sans-serif;
       color: #333;
       background: #fff;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    header {
-      padding: 5px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo img {
-      height: 80px;
-      width: auto;
-    }
-
-    nav a {
-      margin-left: 20px;
-      color: #333;
+    a {
       text-decoration: none;
-      font-weight: bold;
     }
 
-    .medical-hero {
-      position: relative;
-    }
-
-    .medical-hero img {
-      width: 100%;
-      height: auto;
+    img {
+      max-width: 100%;
       display: block;
     }
 
-    .medical-overlay {
-      position: absolute;
-      top: 40%;
-      left: 8%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.82);
-      padding: 34px;
-      border-radius: 22px;
-      max-width: 560px;
-      text-align: left;
+    header {
+      background: #fff;
+      padding: 14px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
 
-    .medical-overlay h1 {
-      color: #139aaa;
-      font-size: 46px;
-      margin: 0 0 18px;
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .medical-overlay p {
-      font-size: 18px;
-      margin-bottom: 24px;
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #1497a3;
+      font-weight: 800;
+      font-size: 1.25rem;
+      white-space: nowrap;
+    }
+
+    .logo-area img {
+      width: 58px;
+      height: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: #1497a3;
+    }
+
+    .page-hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      padding: 72px 20px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.68) 45%, rgba(255,255,255,0.18) 100%),
+        url("hospital-staff.png") center right / cover no-repeat;
+    }
+
+    .page-hero-inner {
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .hero-box {
+      max-width: 620px;
+      background: rgba(255,255,255,0.88);
+      padding: 42px 38px;
+      border-radius: 24px;
+      box-shadow: 0 18px 44px rgba(0,0,0,0.10);
+    }
+
+    .hero-note {
+      display: inline-block;
+      color: #ef7fa0;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .page-hero h1 {
+      margin: 0 0 22px;
+      font-size: 2.75rem;
+      line-height: 1.35;
+      color: #1497a3;
+      font-weight: 900;
+    }
+
+    .page-hero p {
+      margin: 0 0 30px;
+      font-size: 1.05rem;
     }
 
     .btn {
-      display: inline-block;
-      padding: 14px 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 28px;
       border-radius: 999px;
-      background: #22b8c8;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #23c7cc, #11a7b8);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(17,167,184,0.25);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #1497a3;
+      border: 2px solid #1497a3;
     }
 
     section {
-      padding: 80px 8%;
+      padding: 72px 20px;
     }
 
-    h2 {
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 2rem;
+      color: #1497a3;
       text-align: center;
-      color: #139aaa;
-      font-size: 36px;
-      margin-bottom: 40px;
+      font-weight: 900;
     }
 
-    .issues {
-      background: #f8fbfc;
+    .title-line {
+      width: 58px;
+      height: 4px;
+      background: #f08aaa;
+      border-radius: 999px;
+      margin: 18px auto 30px;
     }
 
-    .cards,
-    .plan-cards {
+    .lead {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 40px;
+      font-size: 1.03rem;
+    }
+
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .card,
-    .plan-card {
-      background: white;
+    .card {
+      background: #fff;
       padding: 30px;
+      border-radius: 22px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: #1497a3;
+      font-size: 1.25rem;
+    }
+
+    .card-icon {
+      font-size: 2.7rem;
+      margin-bottom: 14px;
+    }
+
+    .flow {
+      background: linear-gradient(180deg, #eefbfc 0%, #ffffff 100%);
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      background: #fff;
       border-radius: 20px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
     }
 
-    .card h3,
-    .plan-card h3 {
-      color: #139aaa;
-      margin-top: 0;
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #1497a3;
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 14px;
     }
 
-    .premium {
-      border: 3px solid #22b8c8;
+    .step h3 {
+      margin: 0 0 10px;
+      color: #1497a3;
     }
 
-    .plan-note {
-      font-size: 14px;
+    .price-box {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .price-main {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #1497a3;
+      margin: 10px 0;
+    }
+
+    .notice {
+      max-width: 900px;
+      margin: 30px auto 0;
+      background: #f8fafa;
+      border-left: 5px solid #1497a3;
+      border-radius: 14px;
+      padding: 20px 24px;
       color: #666;
-      margin-top: 20px;
+      font-size: 0.92rem;
     }
 
     .cta {
+      background: linear-gradient(135deg, #e8fbfc, #fff0f5);
       text-align: center;
-      background: linear-gradient(135deg, #e8fbfd, #fff0f5);
     }
 
-    @media (max-width: 700px) {
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    footer {
+      background: #1497a3;
+      color: #fff;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
       header {
-        display: block;
-        text-align: center;
+        padding: 12px 16px;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 6px;
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .medical-overlay {
-        position: static;
-        transform: none;
-        margin: 20px;
+      .logo-area {
+        font-size: 1.05rem;
       }
 
-      .medical-overlay h1 {
-        font-size: 34px;
+      .logo-area img {
+        width: 54px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 0.86rem;
+      }
+
+      .page-hero {
+        min-height: auto;
+        padding: 52px 18px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 100%),
+          url("hospital-staff.png") center top / cover no-repeat;
+      }
+
+      .hero-box {
+        padding: 28px 22px;
+        border-radius: 22px;
+      }
+
+      .page-hero h1 {
+        font-size: 2.1rem;
+      }
+
+      section {
+        padding: 58px 18px;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .cards,
+      .flow-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
       }
     }
-    .campaign-box{
-  background:#fff8e6;
-  border-left:6px solid #f5b400;
-  padding:20px;
-  margin:40px 0;
-  border-radius:12px;
-  font-size:18px;
-  text-align:center;
-}
-
-.campaign-box strong{
-  color:#d35400;
-  font-size:22px;
-}
-    @media (max-width: 768px){
-  body{
-    overflow-x:hidden;
-  }
-
-  header{
-    padding:22px 16px 18px;
-  }
-
-  header .logo,
-  .logo{
-    width:230px;
-    max-width:78vw;
-    margin:0 auto 20px;
-    display:block;
-  }
-
-  nav{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    gap:22px;
-    flex-wrap:nowrap;
-  }
-
-  nav a{
-    font-size:15px;
-    white-space:nowrap;
-  }
-
-  h1{
-    font-size:34px;
-    line-height:1.25;
-  }
-
-  h2{
-    font-size:30px;
-    line-height:1.35;
-  }
-
-  p{
-    font-size:16px;
-    line-height:1.9;
-  }
-
-  .page-title,
-  .hero{
-    min-height:auto;
-  }
-
-  section{
-    padding-left:7%;
-    padding-right:7%;
-  }
-
-  .card,
-  .feature-card,
-  .contact-box,
-  .page-title-text{
-    max-width:100%;
-    box-sizing:border-box;
-  }
-}
-    @media (max-width: 768px){
-  .medical-hero{
-    position:relative;
-    min-height:560px;
-    overflow:hidden;
-  }
-
-  .medical-hero img{
-    width:100%;
-    height:560px;
-    object-fit:cover;
-    object-position:center top;
-    display:block;
-  }
-
-  .medical-overlay{
-    position:absolute;
-    left:8%;
-    right:8%;
-    bottom:38px;
-    top:auto;
-    transform:none;
-    max-width:none;
-    padding:24px 24px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.86);
-    box-shadow:0 8px 28px rgba(0,0,0,0.08);
-    text-align:left;
-  }
-
-  .medical-overlay h1{
-    font-size:34px;
-    line-height:1.3;
-    margin:0 0 14px;
-    color:#139aaa;
-  }
-
-  .medical-overlay p{
-    font-size:16px;
-    line-height:1.8;
-    margin:0 0 18px;
-  }
-
-  .medical-overlay .btn{
-    display:inline-block;
-    padding:14px 24px;
-    font-size:16px;
-  }
-}
   </style>
 </head>
 
@@ -299,98 +361,122 @@
   </div>
 </header>
 
-<div class="medical-hero">
-  <img src="hospital-staff.png" alt="医療機関の採用支援">
+<main>
 
-  <div class="medical-overlay">
-    <h1>医療機関の皆様へ</h1>
-    <p>
-      OKAメディカルネクストは、看護師採用に取り組む医療機関様を支援する求人情報サービスです。<br>
-      職場の魅力を分かりやすく届け、採用活動をサポートします。
-    </p>
-    <a class="btn" href="medical-apply.html">
-求人掲載を申込む
-    </a>
-  </div>
-</div>
-
-<section class="issues">
-  <h2>採用でお困りではありませんか？</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>応募が集まらない</h3>
-      <p>求人を出しても応募が少なく、人材確保に苦労している。</p>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="hero-box">
+        <span class="hero-note">医療機関の皆様へ</span>
+        <h1>看護師採用を<br>サポートします</h1>
+        <p>
+          OKAメディカルネクストは、看護師採用に取り組む医療機関様を支援する求人情報サイトです。
+          職場の魅力を分かりやすく届け、採用活動をサポートします。
+        </p>
+        <a href="contact.html" class="btn btn-primary">求人掲載について相談する</a>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>掲載の手間を減らしたい</h3>
-      <p>求人作成や更新作業をできるだけシンプルにしたい。</p>
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">OKAメディカルネクストでできること</h2>
+      <div class="title-line"></div>
+      <p class="lead">
+        看護師に向けて、医療機関様の魅力や求人情報を分かりやすく届けます。
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🏥</div>
+          <h3>求人情報の掲載</h3>
+          <p>勤務地、勤務形態、施設の特徴などを整理し、求職者に伝わりやすい形で掲載します。</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🩺</div>
+          <h3>職場の魅力を発信</h3>
+          <p>給与条件だけでなく、働きやすさや雰囲気など、職場の強みを伝えます。</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>採用活動を支援</h3>
+          <p>看護師の方に情報が届きやすい導線を整え、採用活動の入口をサポートします。</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>職場の魅力を伝えたい</h3>
-      <p>働く環境や雰囲気を看護師へ分かりやすく届けたい。</p>
+  <section class="flow">
+    <div class="section-inner">
+      <h2 class="section-title">掲載までの流れ</h2>
+      <div class="title-line"></div>
+
+      <div class="flow-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>お問い合わせ</h3>
+          <p>お問い合わせフォームより、掲載希望内容をご連絡ください。</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>内容確認</h3>
+          <p>求人内容や施設情報を確認し、掲載内容を整理します。</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>求人掲載</h3>
+          <p>サイト内に求人情報を掲載し、求職者へ分かりやすく発信します。</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>応募導線の案内</h3>
+          <p>お問い合わせや応募につながる導線を整えます。</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="plans">
-  <h2>選べる掲載プラン</h2>
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">掲載料金について</h2>
+      <div class="title-line"></div>
 
-  <div class="plan-cards">
-    <div class="plan-card">
-      <h3>スタンダードプラン</h3>
-      <p>まずは求人掲載を始めたい医療機関様向け。</p>
-      <ul>
-        <li>求人情報の掲載</li>
-        <li>施設紹介文の掲載</li>
-        <li>写真掲載</li>
-        <li>応募受付フォームへの導線</li>
-      </ul>
-      <p class="plan-note">料金はお問い合わせ後にご案内します。</p>
+      <div class="price-box">
+        <p>掲載や採用相談については、内容を確認のうえ個別にご案内します。</p>
+        <div class="price-main">まずはお気軽にご相談ください</div>
+        <p>医療機関様の状況に合わせて、無理のない形で掲載内容を調整します。</p>
+      </div>
 
-      <a class="btn" href="standard-sample.html">
-    サンプルを見る
-  </a>
-      
+      <div class="notice">
+        ※現在は求人情報提供サイトとして運営しています。許可取得前において、求職者の紹介、推薦、面接調整、採用条件交渉等は行いません。
+      </div>
     </div>
+  </section>
 
-    <div class="plan-card premium">
-      <h3>プレミアムプラン</h3>
-      <p>職場の魅力をしっかり伝え、採用広報を強化したい医療機関様向け。</p>
-      <ul>
-        <li>求人情報の掲載</li>
-        <li>施設紹介文の掲載</li>
-        <li>写真掲載</li>
-        <li>優先表示</li>
-        <li>職場紹介ページ作成支援</li>
-      </ul>
-      <p class="plan-note">料金はお問い合わせ後にご案内します。</p>
+  <section class="cta">
+    <div class="section-inner">
+      <h2 class="section-title">求人掲載をご検討中の医療機関様へ</h2>
+      <div class="title-line"></div>
+      <p class="lead">
+        掲載内容や採用に関するご相談は、お問い合わせフォームよりご連絡ください。
+      </p>
 
-      <a class="btn" href="premium-sample.html">
-  サンプルを見る
-</a>
-      
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">お問い合わせする</a>
+        <a href="jobs.html" class="btn btn-secondary">求人ページを見る</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="campaign-box">
-  <strong>🎉 オープン記念キャンペーン</strong><br>
-  先着10施設限定で初月掲載料無料
-</div>
+</main>
 
-<section class="cta">
-<section class="cta">
-  <h2>まずはお気軽にご相談ください</h2>
-  <p>
-    採用状況や掲載内容について、まずはフォームよりお問い合わせください。
-  </p>
-  <a class="btn" href="contact.html">
-お問い合わせはこちら
-</a>
-</section>
+<footer>
+  <p>&copy; OKA Medical Next. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
