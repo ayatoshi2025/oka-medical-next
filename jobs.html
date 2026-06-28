@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>求人を探す｜OKAメディカルネクスト</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
       color: #333;
       background: #fff;
       line-height: 1.8;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
     }
 
@@ -31,36 +29,63 @@
 
     header {
       background: #fff;
-      padding: 26px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #eef4f5;
+      padding: 14px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
       z-index: 20;
     }
 
-    .logo img {
-      width: 260px;
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #1497a3;
+      font-weight: 800;
+      font-size: 1.25rem;
+      white-space: nowrap;
+    }
+
+    .logo-area img {
+      width: 58px;
+      height: auto;
     }
 
     nav {
       display: flex;
-      gap: 44px;
-      font-weight: 700;
-      font-size: 16px;
+      gap: 28px;
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: #1497a3;
     }
 
     .page-hero {
       min-height: 520px;
       display: flex;
       align-items: center;
-      padding: 70px 9%;
+      padding: 70px 20px;
       background:
-        linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 48%, rgba(255,255,255,.18) 100%),
+        linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.82) 48%, rgba(255,255,255,0.18) 100%),
         url("job-search.png") center right / contain no-repeat,
         linear-gradient(135deg, #f7fdff, #ffffff);
+    }
+
+    .page-hero-inner {
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .hero-content {
@@ -75,16 +100,16 @@
     }
 
     .page-hero h1 {
-      font-size: 46px;
+      margin: 0 0 22px;
+      font-size: 2.75rem;
       line-height: 1.35;
-      color: #129ca8;
-      margin-bottom: 22px;
-      font-weight: 800;
+      color: #1497a3;
+      font-weight: 900;
     }
 
     .page-hero p {
-      font-size: 17px;
-      margin-bottom: 28px;
+      margin: 0 0 28px;
+      font-size: 1.05rem;
     }
 
     .hero-btn {
@@ -92,37 +117,43 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      padding: 16px 30px;
-      background: linear-gradient(135deg, #26c2c9, #0ea4b0);
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #23c7cc, #11a7b8);
       color: #fff;
-      font-size: 18px;
-      font-weight: 700;
-      box-shadow: 0 12px 24px rgba(0,0,0,.15);
+      font-size: 1.05rem;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(17,167,184,0.25);
     }
 
     section {
-      padding: 64px 8%;
+      padding: 72px 20px;
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
     .section-title {
+      margin: 0;
       text-align: center;
-      color: #129ca8;
-      font-size: 30px;
-      margin-bottom: 14px;
-      font-weight: 800;
+      color: #1497a3;
+      font-size: 2rem;
+      font-weight: 900;
     }
 
     .section-line {
-      width: 38px;
-      height: 3px;
-      background: #f38aa8;
-      margin: 0 auto 28px;
+      width: 58px;
+      height: 4px;
+      background: #f08aaa;
+      margin: 18px auto 30px;
       border-radius: 999px;
     }
 
     .section-lead {
       text-align: center;
-      margin-bottom: 38px;
+      margin: 0 auto 38px;
+      max-width: 760px;
     }
 
     .search-box {
@@ -131,7 +162,7 @@
       background: #f3fcfd;
       border-radius: 24px;
       padding: 34px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
     }
 
     .filters {
@@ -141,9 +172,9 @@
     }
 
     .filter h2 {
-      color: #129ca8;
-      font-size: 20px;
-      margin-bottom: 14px;
+      margin: 0 0 14px;
+      color: #1497a3;
+      font-size: 1.2rem;
     }
 
     .tags button {
@@ -153,14 +184,14 @@
       border-radius: 999px;
       border: none;
       background: #fff;
-      color: #129ca8;
-      font-weight: 700;
+      color: #1497a3;
+      font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 3px 10px rgba(0,0,0,.06);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     }
 
     .tags button.selected {
-      background: #19aab5;
+      background: #1497a3;
       color: #fff;
     }
 
@@ -176,31 +207,31 @@
     }
 
     .detail-group h3 {
-      font-size: 15px;
+      margin: 0 0 8px;
+      font-size: 0.95rem;
       color: #555;
-      margin-bottom: 8px;
     }
 
     .selected-summary {
-      margin-top: 24px;
-      font-size: 15px;
+      margin: 24px 0 0;
+      font-size: 0.95rem;
       color: #555;
       text-align: center;
     }
 
-    .cards {
+    .job-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
+      gap: 24px;
       max-width: 1120px;
       margin: 0 auto;
     }
 
-    .card {
+    .job-card {
       background: #fff;
-      border-radius: 18px;
+      border-radius: 22px;
       padding: 28px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
     }
 
     .status {
@@ -209,42 +240,42 @@
       border-radius: 999px;
       background: #fff0f5;
       color: #d45a7a;
-      font-weight: 700;
-      font-size: 13px;
+      font-weight: 800;
+      font-size: 0.82rem;
       margin-bottom: 14px;
     }
 
-    .card h2 {
-      color: #129ca8;
-      font-size: 22px;
-      margin-bottom: 12px;
+    .job-card h3 {
+      margin: 0 0 12px;
+      color: #1497a3;
+      font-size: 1.25rem;
     }
 
     .meta {
       color: #555;
-      margin-bottom: 14px;
+      margin: 0 0 14px;
     }
 
     .notice {
       max-width: 980px;
       margin: 0 auto;
       background: #f8fafa;
-      border-left: 5px solid #19aab5;
+      border-left: 5px solid #1497a3;
       border-radius: 14px;
       padding: 20px 24px;
       color: #666;
-      font-size: 14px;
+      font-size: 0.92rem;
     }
 
     .cta {
-      background: linear-gradient(135deg, #e8fbfd, #fff0f5);
+      background: linear-gradient(135deg, #e8fbfc, #fff0f5);
       text-align: center;
     }
 
     .cta h2 {
-      color: #129ca8;
-      font-size: 28px;
-      margin-bottom: 16px;
+      margin: 0 0 16px;
+      color: #1497a3;
+      font-size: 1.8rem;
     }
 
     .cta p {
@@ -266,8 +297,8 @@
       border-radius: 999px;
       padding: 15px 28px;
       color: #fff;
-      font-weight: 700;
-      box-shadow: 0 10px 22px rgba(0,0,0,.13);
+      font-weight: 800;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.13);
     }
 
     .btn-pink {
@@ -275,64 +306,65 @@
     }
 
     .btn-teal {
-      background: linear-gradient(135deg, #26c2c9, #0ea4b0);
+      background: linear-gradient(135deg, #23c7cc, #11a7b8);
     }
 
     footer {
+      background: #1497a3;
+      color: #fff;
       text-align: center;
-      padding: 34px 8%;
-      color: #777;
-      font-size: 13px;
-      background: #f8fafa;
-    }
-
-    footer a {
-      margin: 0 10px;
-      color: #129ca8;
-      font-weight: 700;
+      padding: 28px 20px;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        gap: 22px;
-        padding: 28px 18px 20px;
+        padding: 12px 16px;
       }
 
-      .logo img {
-        width: 250px;
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-area {
+        font-size: 1.05rem;
+      }
+
+      .logo-area img {
+        width: 54px;
       }
 
       nav {
         width: 100%;
         justify-content: space-between;
-        gap: 0;
-        font-size: 15px;
+        gap: 8px;
+        font-size: 0.86rem;
       }
 
       .page-hero {
         min-height: auto;
-        padding: 42px 24px 320px;
+        padding: 48px 18px 320px;
         background:
-          linear-gradient(180deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.88) 52%, rgba(255,255,255,.18) 100%),
+          linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 52%, rgba(255,255,255,0.28) 100%),
           url("job-search.png") center bottom / 300px auto no-repeat,
           linear-gradient(135deg, #f7fdff, #ffffff);
       }
 
       .page-hero h1 {
-        font-size: 34px;
+        font-size: 2.1rem;
       }
 
       .page-hero p {
-        font-size: 15px;
+        font-size: 0.96rem;
       }
 
       section {
-        padding: 52px 22px;
+        padding: 58px 18px;
       }
 
       .section-title {
-        font-size: 28px;
+        font-size: 1.7rem;
       }
 
       .filters {
@@ -343,7 +375,7 @@
         padding: 28px 22px;
       }
 
-      .cards {
+      .job-cards {
         grid-template-columns: 1fr;
       }
 
@@ -354,11 +386,6 @@
       .btn,
       .hero-btn {
         width: 100%;
-      }
-
-      footer a {
-        display: inline-block;
-        margin: 6px 8px;
       }
     }
   </style>
@@ -384,139 +411,143 @@
 <main>
 
   <section class="page-hero">
-    <div class="hero-content">
-      <span class="hero-note">看護師向け求人情報</span>
-      <h1>あなたに合った<br>職場を探す</h1>
-      <p>
-        OKAメディカルネクストでは、看護師の方に向けた求人情報を順次掲載予定です。
-        勤務地・施設形態・働き方から、あなたに合った職場探しをサポートします。
-      </p>
-      <a href="#search" class="hero-btn">条件から求人を探す　›</a>
+    <div class="page-hero-inner">
+      <div class="hero-content">
+        <span class="hero-note">看護師向け求人情報</span>
+        <h1>あなたに合った<br>職場を探す</h1>
+        <p>
+          OKAメディカルネクストでは、看護師の方に向けた求人情報を順次掲載予定です。
+          勤務地・施設形態・働き方から、あなたに合った職場探しをサポートします。
+        </p>
+        <a href="#search" class="hero-btn">条件から求人を探す　›</a>
+      </div>
     </div>
   </section>
 
   <section id="search">
-    <h2 class="section-title">求人検索</h2>
-    <div class="section-line"></div>
-    <p class="section-lead">希望条件を選択して、掲載予定の求人情報を確認できます。</p>
+    <div class="section-inner">
+      <h2 class="section-title">求人検索</h2>
+      <div class="section-line"></div>
+      <p class="section-lead">希望条件を選択して、掲載予定の求人情報を確認できます。</p>
 
-    <div class="search-box">
-      <div class="filters">
+      <div class="search-box">
+        <div class="filters">
 
-        <div class="filter">
-          <h2>勤務地</h2>
-          <div class="tags">
-            <button type="button" data-area="全国">全国</button>
-            <button type="button" data-area="北海道・東北">北海道・東北</button>
-            <button type="button" data-area="関東">関東</button>
-            <button type="button" data-area="中部">中部</button>
-            <button type="button" data-area="関西">関西</button>
-            <button type="button" data-area="中国・四国">中国・四国</button>
-            <button type="button" data-area="九州・沖縄">九州・沖縄</button>
+          <div class="filter">
+            <h2>勤務地</h2>
+            <div class="tags">
+              <button type="button" data-area="全国">全国</button>
+              <button type="button" data-area="北海道・東北">北海道・東北</button>
+              <button type="button" data-area="関東">関東</button>
+              <button type="button" data-area="中部">中部</button>
+              <button type="button" data-area="関西">関西</button>
+              <button type="button" data-area="中国・四国">中国・四国</button>
+              <button type="button" data-area="九州・沖縄">九州・沖縄</button>
+            </div>
+
+            <div id="areaDetails" class="detail-group">
+              <h3>詳細エリア</h3>
+              <div class="tags detail-tags"></div>
+            </div>
           </div>
 
-          <div id="areaDetails" class="detail-group">
-            <h3>詳細エリア</h3>
-            <div class="tags detail-tags"></div>
+          <div class="filter">
+            <h2>施設形態</h2>
+            <div class="tags">
+              <button type="button">病院</button>
+              <button type="button">クリニック</button>
+              <button type="button">訪問看護</button>
+              <button type="button">介護施設</button>
+              <button type="button">健診</button>
+            </div>
           </div>
+
+          <div class="filter">
+            <h2>雇用形態</h2>
+            <div class="tags">
+              <button type="button">正社員</button>
+              <button type="button">パート</button>
+              <button type="button">日勤のみ</button>
+              <button type="button">夜勤あり</button>
+              <button type="button">ブランク歓迎</button>
+            </div>
+          </div>
+
         </div>
 
-        <div class="filter">
-          <h2>施設形態</h2>
-          <div class="tags">
-            <button type="button">病院</button>
-            <button type="button">クリニック</button>
-            <button type="button">訪問看護</button>
-            <button type="button">介護施設</button>
-            <button type="button">健診</button>
-          </div>
-        </div>
-
-        <div class="filter">
-          <h2>雇用形態</h2>
-          <div class="tags">
-            <button type="button">正社員</button>
-            <button type="button">パート</button>
-            <button type="button">日勤のみ</button>
-            <button type="button">夜勤あり</button>
-            <button type="button">ブランク歓迎</button>
-          </div>
-        </div>
-
-      </div>
-
-      <p id="selectedSummary" class="selected-summary">条件を選択できます。</p>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">掲載予定の求人</h2>
-    <div class="section-line"></div>
-
-    <div class="cards">
-      <div class="card">
-        <span class="status">掲載準備中</span>
-        <h2>東京都内クリニック</h2>
-        <p class="meta">
-          勤務地：東京都内<br>
-          雇用形態：正社員<br>
-          給与目安：月給30万円〜
-        </p>
-        <p>外来業務を中心としたクリニック求人を掲載予定です。</p>
-      </div>
-
-      <div class="card">
-        <span class="status">掲載準備中</span>
-        <h2>訪問看護ステーション</h2>
-        <p class="meta">
-          勤務地：関東エリア<br>
-          雇用形態：正社員・パート<br>
-          条件：日勤中心
-        </p>
-        <p>在宅医療に関心のある看護師の方向け求人を掲載予定です。</p>
-      </div>
-
-      <div class="card">
-        <span class="status">掲載準備中</span>
-        <h2>病院・介護施設</h2>
-        <p class="meta">
-          勤務地：全国<br>
-          雇用形態：正社員・非常勤<br>
-          条件：経験者歓迎
-        </p>
-        <p>病棟、外来、施設看護など幅広い求人を順次掲載予定です。</p>
+        <p id="selectedSummary" class="selected-summary">条件を選択できます。</p>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="notice">
-      ※現在は求人掲載準備中です。OKAメディカルネクストは求人情報提供サイトとして運営し、許可取得前において求職者の紹介、推薦、面接調整、採用条件交渉等は行いません。
+    <div class="section-inner">
+      <h2 class="section-title">掲載予定の求人</h2>
+      <div class="section-line"></div>
+
+      <div class="job-cards">
+        <div class="job-card">
+          <span class="status">掲載準備中</span>
+          <h3>東京都内クリニック</h3>
+          <p class="meta">
+            勤務地：東京都内<br>
+            雇用形態：正社員<br>
+            給与目安：月給30万円〜
+          </p>
+          <p>外来業務を中心としたクリニック求人を掲載予定です。</p>
+        </div>
+
+        <div class="job-card">
+          <span class="status">掲載準備中</span>
+          <h3>訪問看護ステーション</h3>
+          <p class="meta">
+            勤務地：関東エリア<br>
+            雇用形態：正社員・パート<br>
+            条件：日勤中心
+          </p>
+          <p>在宅医療に関心のある看護師の方向け求人を掲載予定です。</p>
+        </div>
+
+        <div class="job-card">
+          <span class="status">掲載準備中</span>
+          <h3>病院・介護施設</h3>
+          <p class="meta">
+            勤務地：全国<br>
+            雇用形態：正社員・非常勤<br>
+            条件：経験者歓迎
+          </p>
+          <p>病棟、外来、施設看護など幅広い求人を順次掲載予定です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="notice">
+        ※現在は求人掲載準備中です。OKAメディカルネクストは求人情報提供サイトとして運営し、許可取得前において求職者の紹介、推薦、面接調整、採用条件交渉等は行いません。
+      </div>
     </div>
   </section>
 
   <section class="cta">
-    <h2>求人掲載をご検討の医療機関様へ</h2>
-    <p>
-      掲載内容やご相談については、医療機関向けページまたはお問い合わせフォームよりご確認ください。
-    </p>
+    <div class="section-inner">
+      <h2>求人掲載をご検討の医療機関様へ</h2>
+      <p>
+        掲載内容やご相談については、医療機関向けページまたはお問い合わせフォームよりご確認ください。
+      </p>
 
-    <div class="cta-buttons">
-      <a class="btn btn-pink" href="medical.html">医療機関向けページへ　›</a>
-      <a class="btn btn-teal" href="contact.html">掲載について問い合わせる　›</a>
+      <div class="cta-buttons">
+        <a class="btn btn-pink" href="medical.html">医療機関向けページへ　›</a>
+        <a class="btn btn-teal" href="contact.html">掲載について問い合わせる　›</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <p>OKAメディカルネクスト</p>
-  <p>
-    <a href="index.html">トップページ</a>
-    <a href="medical.html">医療機関の方へ</a>
-    <a href="contact.html">お問い合わせ</a>
-  </p>
-  <p>&copy; OKAメディカルネクスト All Rights Reserved.</p>
+  <p>&copy; OKA Medical Next. All Rights Reserved.</p>
 </footer>
 
 <script>
