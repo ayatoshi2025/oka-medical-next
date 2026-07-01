@@ -13,7 +13,7 @@ body{
   font-family:"Helvetica Neue",Arial,sans-serif;
   color:#333;
   background:#fff;
-  line-height:1.8;
+  line-height:1.75;
 }
 
 a{text-decoration:none}
@@ -46,9 +46,7 @@ header{
   white-space:nowrap;
 }
 
-.logo-area img{
-  width:58px;
-}
+.logo-area img{width:58px}
 
 nav{
   display:flex;
@@ -95,9 +93,7 @@ nav a{color:#1497a3}
   color:#1497a3;
 }
 
-.hero p{
-  margin:0 0 30px;
-}
+.hero p{margin:0 0 30px}
 
 .btn{
   display:inline-flex;
@@ -127,7 +123,7 @@ nav a{color:#1497a3}
 }
 
 section{
-  padding:72px 20px;
+  padding:66px 20px;
 }
 
 .section-inner{
@@ -141,6 +137,7 @@ section{
   color:#1497a3;
   font-size:2rem;
   font-weight:900;
+  line-height:1.45;
 }
 
 .title-line{
@@ -148,37 +145,46 @@ section{
   height:4px;
   background:#f08aaa;
   border-radius:999px;
-  margin:18px auto 30px;
+  margin:18px auto 28px;
 }
 
 .lead{
   text-align:center;
   max-width:760px;
-  margin:0 auto 40px;
+  margin:0 auto 34px;
 }
 
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  gap:22px;
 }
 
 .card{
   background:#fff;
-  padding:30px;
-  border-radius:22px;
-  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  padding:24px 22px;
+  border-radius:20px;
+  box-shadow:0 10px 26px rgba(0,0,0,.07);
   text-align:center;
 }
 
 .card-icon{
-  font-size:2.7rem;
-  margin-bottom:14px;
+  font-size:2.25rem;
+  margin-bottom:8px;
+  line-height:1;
 }
 
 .card h3{
   color:#1497a3;
-  margin:0 0 12px;
+  margin:0 0 8px;
+  font-size:1.18rem;
+  line-height:1.5;
+}
+
+.card p{
+  margin:0;
+  font-size:.96rem;
+  line-height:1.75;
 }
 
 .plan-section{
@@ -193,16 +199,14 @@ section{
 
 .plan-card{
   background:#fff;
-  border-radius:26px;
-  padding:32px;
+  border-radius:24px;
+  padding:30px;
   box-shadow:0 14px 36px rgba(0,0,0,.08);
   border:1px solid #d9eef1;
   position:relative;
 }
 
-.plan-card.premium{
-  border:3px solid #f08aaa;
-}
+.plan-card.premium{border:3px solid #f08aaa}
 
 .recommend{
   position:absolute;
@@ -227,6 +231,7 @@ section{
   font-size:1.8rem;
   font-weight:900;
   margin:18px 0;
+  line-height:1.4;
 }
 
 .plan-card ul{
@@ -240,59 +245,6 @@ section{
   flex-wrap:wrap;
 }
 
-.sample-section{
-  background:#fff;
-}
-
-.sample-links{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:26px;
-}
-
-.sample-link-card{
-  background:#fff;
-  border-radius:26px;
-  overflow:hidden;
-  box-shadow:0 16px 40px rgba(0,0,0,.09);
-}
-
-.sample-head{
-  padding:28px 32px;
-  color:#fff;
-}
-
-.sample-head.standard{
-  background:linear-gradient(135deg,#23c7cc,#11a7b8);
-}
-
-.sample-head.premium{
-  background:linear-gradient(135deg,#f78cad,#ef7099);
-}
-
-.sample-head span{
-  display:inline-block;
-  background:rgba(255,255,255,.22);
-  padding:5px 12px;
-  border-radius:999px;
-  font-size:.85rem;
-  font-weight:800;
-  margin-bottom:10px;
-}
-
-.sample-head h3{
-  margin:0;
-  font-size:1.55rem;
-}
-
-.sample-body{
-  padding:30px;
-}
-
-.sample-body ul{
-  padding-left:20px;
-}
-
 .flow{
   background:linear-gradient(180deg,#eefbfc,#fff);
 }
@@ -300,33 +252,35 @@ section{
 .flow-steps{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  gap:18px;
 }
 
 .step{
   background:#fff;
-  border-radius:20px;
-  padding:26px;
-  box-shadow:0 10px 28px rgba(0,0,0,.07);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 26px rgba(0,0,0,.07);
 }
 
 .step-number{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:34px;
-  height:34px;
+  width:32px;
+  height:32px;
   border-radius:50%;
   background:#1497a3;
   color:#fff;
   font-weight:900;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 
 .step h3{
   color:#1497a3;
-  margin:0 0 10px;
+  margin:0 0 8px;
 }
+
+.step p{margin:0}
 
 .notice{
   max-width:900px;
@@ -372,9 +326,7 @@ footer{
     font-size:1.05rem;
   }
 
-  .logo-area img{
-    width:54px;
-  }
+  .logo-area img{width:54px}
 
   nav{
     width:100%;
@@ -393,6 +345,7 @@ footer{
 
   .hero-box{
     padding:28px 22px;
+    border-radius:22px;
   }
 
   .hero h1{
@@ -400,18 +353,54 @@ footer{
   }
 
   section{
-    padding:58px 18px;
+    padding:46px 18px;
   }
 
   .section-title{
-    font-size:1.7rem;
+    font-size:1.55rem;
+  }
+
+  .title-line{
+    margin:14px auto 22px;
+  }
+
+  .lead{
+    margin-bottom:24px;
+    font-size:.96rem;
   }
 
   .cards,
   .plan-box,
-  .sample-links,
   .flow-steps{
     grid-template-columns:1fr;
+  }
+
+  .cards{
+    gap:18px;
+  }
+
+  .card{
+    padding:22px 18px;
+    border-radius:20px;
+  }
+
+  .card-icon{
+    font-size:2rem;
+    margin-bottom:8px;
+  }
+
+  .card h3{
+    font-size:1.08rem;
+    margin-bottom:6px;
+  }
+
+  .card p{
+    font-size:.94rem;
+    line-height:1.65;
+  }
+
+  .plan-card{
+    padding:26px 22px;
   }
 
   .btn{
