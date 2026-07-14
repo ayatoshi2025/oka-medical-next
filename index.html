@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>OKAメディカルネクスト｜看護師の求人・転職情報サイト</title>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>OKAメディカルネクスト｜看護師の求人・転職情報サイト</title>
+
+  <meta
+    name="description"
+    content="OKAメディカルネクストは、看護師のための求人・転職情報サイトです。全国の病院・クリニック・訪問看護ステーションなどの求人情報を掲載し、あなたらしく働ける職場探しを応援します。"
+  >
+
+  <link
+    rel="canonical"
+    href="https://okamedicalnext.jp/"
+  >
+
+  <meta
+    property="og:title"
+    content="OKAメディカルネクスト｜看護師の求人・転職情報サイト"
+  >
+
+  <meta
+    property="og:description"
+    content="看護師のための求人・転職情報サイト。全国の病院・クリニック・訪問看護ステーションなどの求人情報を掲載しています。"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://okamedicalnext.jp/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://okamedicalnext.jp/hero.png"
+  >
+
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -22,26 +67,27 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
+      height: auto;
     }
 
     header {
-      background: #fff;
-      padding: 14px 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
       z-index: 20;
+      padding: 14px 20px;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
 
     .header-inner {
-      max-width: 1180px;
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
     .logo-area {
@@ -49,8 +95,8 @@
       align-items: center;
       gap: 10px;
       color: #1497a3;
-      font-weight: 800;
       font-size: 1.25rem;
+      font-weight: 800;
       white-space: nowrap;
     }
 
@@ -68,43 +114,56 @@
 
     nav a {
       color: #1497a3;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ef7099;
     }
 
     .hero {
-      min-height: 620px;
       display: flex;
       align-items: center;
+      min-height: 620px;
       padding: 78px 20px;
       background:
         linear-gradient(
           90deg,
-          rgba(255,255,255,0.68) 0%,
-          rgba(255,255,255,0.42) 42%,
-          rgba(255,255,255,0.08) 100%
+          rgba(255, 255, 255, 0.68) 0%,
+          rgba(255, 255, 255, 0.42) 42%,
+          rgba(255, 255, 255, 0.08) 100%
         ),
         url("hero.png") center top / cover no-repeat;
     }
 
     .hero-inner {
-      max-width: 1180px;
       width: 100%;
+      max-width: 1180px;
       margin: 0 auto;
     }
 
     .hero-box {
-      max-width: 620px;
-      background: rgba(255,255,255,0.88);
+      max-width: 650px;
       padding: 46px 40px;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 26px;
-      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #ef7099;
+      font-size: 0.95rem;
+      font-weight: 900;
     }
 
     .hero h1 {
       margin: 0 0 22px;
-      font-size: 2.65rem;
-      line-height: 1.35;
       color: #1497a3;
+      font-size: 2.65rem;
       font-weight: 900;
+      line-height: 1.35;
     }
 
     .hero p {
@@ -114,8 +173,8 @@
 
     .hero-buttons {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
+      gap: 16px;
     }
 
     .btn {
@@ -123,21 +182,33 @@
       align-items: center;
       justify-content: center;
       padding: 16px 30px;
-      border-radius: 999px;
       font-weight: 800;
-      transition: 0.2s;
+      border-radius: 999px;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #23c7cc, #11a7b8);
       color: #fff;
-      box-shadow: 0 10px 24px rgba(17,167,184,0.25);
+      background: linear-gradient(135deg, #23c7cc, #11a7b8);
+      box-shadow: 0 10px 24px rgba(17, 167, 184, 0.25);
     }
 
     .btn-secondary {
-      background: #fff;
       color: #1497a3;
+      background: #fff;
       border: 2px solid #1497a3;
+    }
+
+    .btn-secondary:hover {
+      color: #fff;
+      background: #1497a3;
     }
 
     section {
@@ -151,25 +222,26 @@
 
     .section-title {
       margin: 0;
-      font-size: 2rem;
       color: #1497a3;
-      text-align: center;
+      font-size: 2rem;
       font-weight: 900;
+      line-height: 1.45;
+      text-align: center;
     }
 
     .title-line {
       width: 58px;
       height: 4px;
+      margin: 18px auto 26px;
       background: #f08aaa;
       border-radius: 999px;
-      margin: 18px auto 26px;
     }
 
     .lead {
-      text-align: center;
       max-width: 760px;
       margin: 0 auto 34px;
       font-size: 1.03rem;
+      text-align: center;
     }
 
     .cards {
@@ -179,16 +251,16 @@
     }
 
     .card {
-      background: #fff;
       padding: 24px 22px;
-      border-radius: 20px;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.07);
       text-align: center;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
     }
 
     .card-icon {
-      font-size: 2.15rem;
       margin-bottom: 8px;
+      font-size: 2.15rem;
       line-height: 1;
     }
 
@@ -206,8 +278,8 @@
     }
 
     .jobs-section {
-      background: linear-gradient(180deg, #eefbfc 0%, #ffffff 100%);
       text-align: center;
+      background: linear-gradient(180deg, #eefbfc 0%, #fff 100%);
     }
 
     .main-search-btn {
@@ -217,12 +289,45 @@
       gap: 14px;
       width: min(100%, 520px);
       padding: 22px 28px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #23c7cc, #11a7b8);
       color: #fff;
       font-size: 1.2rem;
       font-weight: 900;
-      box-shadow: 0 14px 28px rgba(17,167,184,0.25);
+      background: linear-gradient(135deg, #23c7cc, #11a7b8);
+      border-radius: 999px;
+      box-shadow: 0 14px 28px rgba(17, 167, 184, 0.25);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .main-search-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(17, 167, 184, 0.3);
+    }
+
+    .register-section {
+      background: #fff;
+    }
+
+    .register-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      padding: 36px 40px;
+      background: linear-gradient(135deg, #effcfd, #fff3f7);
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .register-text h2 {
+      margin: 0 0 12px;
+      color: #1497a3;
+      font-size: 1.7rem;
+    }
+
+    .register-text p {
+      margin: 0;
     }
 
     .medical-section {
@@ -233,9 +338,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       overflow: hidden;
-      border-radius: 26px;
       background: #fff;
-      box-shadow: 0 16px 38px rgba(0,0,0,0.09);
+      border-radius: 26px;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
     }
 
     .medical-text {
@@ -248,22 +353,76 @@
       font-size: 1.8rem;
     }
 
+    .medical-text p {
+      margin: 0 0 26px;
+    }
+
     .medical-image {
-      background: url("hospital-staff.png") center / cover no-repeat;
       min-height: 330px;
+      background: url("hospital-staff.png") center / cover no-repeat;
+    }
+
+    .campaign-link {
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #1497a3, #1ab8c3);
+    }
+
+    .campaign-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 30px 34px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 22px;
+    }
+
+    .campaign-text h2 {
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+      line-height: 1.45;
+    }
+
+    .campaign-text p {
+      margin: 0;
+    }
+
+    .campaign-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 15px 26px;
+      color: #1497a3;
+      font-weight: 900;
+      background: #fff;
+      border-radius: 999px;
+      transition: transform 0.2s ease;
+    }
+
+    .campaign-btn:hover {
+      transform: translateY(-2px);
     }
 
     .contact {
-      background: linear-gradient(135deg, #e8fbfc, #fff0f5);
       text-align: center;
+      background: linear-gradient(135deg, #e8fbfc, #fff0f5);
     }
 
     footer {
-      background: #1497a3;
-      color: #fff;
-      text-align: center;
       padding: 28px 20px;
+      color: #fff;
       font-size: 0.9rem;
+      text-align: center;
+      background: #1497a3;
+    }
+
+    footer p {
+      margin: 0;
     }
 
     @media (max-width: 768px) {
@@ -297,8 +456,8 @@
         background:
           linear-gradient(
             180deg,
-            rgba(255,255,255,0.82) 0%,
-            rgba(255,255,255,0.62) 100%
+            rgba(255, 255, 255, 0.84) 0%,
+            rgba(255, 255, 255, 0.65) 100%
           ),
           url("hero.png") center top / cover no-repeat;
       }
@@ -310,6 +469,10 @@
 
       .hero h1 {
         font-size: 1.95rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
       }
 
       .hero-buttons {
@@ -347,13 +510,13 @@
       }
 
       .card-icon {
-        font-size: 2rem;
         margin-bottom: 7px;
+        font-size: 2rem;
       }
 
       .card h3 {
-        font-size: 1.05rem;
         margin-bottom: 6px;
+        font-size: 1.05rem;
       }
 
       .card p {
@@ -367,17 +530,33 @@
         font-size: 1.1rem;
       }
 
+      .register-box {
+        grid-template-columns: 1fr;
+        padding: 28px 22px;
+        text-align: center;
+      }
+
       .medical-card {
         grid-template-columns: 1fr;
       }
 
       .medical-image {
-        min-height: 220px;
         order: -1;
+        min-height: 220px;
       }
 
       .medical-text {
         padding: 28px 22px;
+      }
+
+      .campaign-box {
+        flex-direction: column;
+        padding: 26px 22px;
+        text-align: center;
+      }
+
+      .campaign-btn {
+        width: 100%;
       }
     }
   </style>
@@ -385,116 +564,267 @@
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo-area">
-      <img src="logo.png" alt="OKAメディカルネクスト ロゴ">
-      <span>OKAメディカルネクスト</span>
-    </a>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-area">
+        <img
+          src="logo.png"
+          alt="OKAメディカルネクスト ロゴ"
+        >
 
-    <nav>
-      <a href="jobs.html">求人を探す</a>
-      <a href="medical.html">医療機関の方へ</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
+        <span>
+          OKAメディカルネクスト
+        </span>
+      </a>
 
-<main>
+      <nav aria-label="メインメニュー">
+        <a href="jobs.html">
+          求人を探す
+        </a>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-box">
-        <h1>あなたらしく働ける職場探しを。</h1>
-        <p>
-          OKAメディカルネクストは、看護師向け求人情報サイトです。<br>
-          医療人材の次の一歩を応援します。
+        <a href="medical.html">
+          医療機関の方へ
+        </a>
+
+        <a href="contact.html">
+          お問い合わせ
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-box">
+          <span class="hero-label">
+            看護師のための求人・転職情報サイト
+          </span>
+
+          <h1>
+            あなたらしく働ける<br>
+            職場探しを。
+          </h1>
+
+          <p>
+            OKAメディカルネクストは、
+            看護師のための求人・転職情報サイトです。<br>
+            全国の病院・クリニック・訪問看護ステーションなどの
+            求人情報を掲載し、あなたらしく働ける職場探しを応援します。
+          </p>
+
+          <div class="hero-buttons">
+            <a
+              href="jobs.html"
+              class="btn btn-primary"
+            >
+              看護師求人を探す
+            </a>
+
+            <a
+              href="nurse-register.html"
+              class="btn btn-secondary"
+            >
+              看護師無料登録
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <h2 class="section-title">
+          OKAメディカルネクストとは
+        </h2>
+
+        <div class="title-line"></div>
+
+        <p class="lead">
+          看護師の方が希望に合った職場を見つけられるよう、
+          求人情報を分かりやすくお届けします。
         </p>
 
-        <div class="hero-buttons">
-          <a href="nurse-register.html" class="btn btn-primary">看護師無料登録</a>
-          <a href="medical.html" class="btn btn-secondary">医療機関の求人掲載申込</a>
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">
+              🩺
+            </div>
+
+            <h3>
+              看護師向け求人情報
+            </h3>
+
+            <p>
+              病院、クリニック、訪問看護ステーションなどの
+              看護師求人情報を掲載します。
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              🔍
+            </div>
+
+            <h3>
+              希望に合う職場探し
+            </h3>
+
+            <p>
+              勤務地や雇用形態などの条件から、
+              希望に合った求人を探せます。
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              📍
+            </div>
+
+            <h3>
+              全国登録に対応
+            </h3>
+
+            <p>
+              地域を問わず、全国の看護師の方から
+              無料登録を受け付けています。
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div class="section-inner">
-      <h2 class="section-title">OKAメディカルネクストとは</h2>
-      <div class="title-line"></div>
-      <p class="lead">
-        看護師の方と医療機関をつなぎ、希望に合った職場探しと採用活動をサポートします。
-      </p>
+    <section class="jobs-section">
+      <div class="section-inner">
+        <h2 class="section-title">
+          看護師求人を探す
+        </h2>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">🩺</div>
-          <h3>看護師の転職を支援</h3>
-          <p>働き方や勤務地など、ご希望に合わせた求人探しをサポートします。</p>
-        </div>
+        <div class="title-line"></div>
 
-        <div class="card">
-          <div class="card-icon">🏥</div>
-          <h3>医療機関の採用を支援</h3>
-          <p>職場の魅力を分かりやすく届け、採用活動を支援します。</p>
-        </div>
+        <p class="lead">
+          ご希望の勤務地や働き方などの条件から、
+          あなたに合った求人を見つけましょう。
+        </p>
 
-        <div class="card">
-          <div class="card-icon">📍</div>
-          <h3>全国登録に対応</h3>
-          <p>地域を問わず、看護師の方と医療機関からのご相談を受け付けています。</p>
+        <a
+          href="jobs.html"
+          class="main-search-btn"
+        >
+          求人を検索する
+          <span aria-hidden="true">›</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="register-section">
+      <div class="section-inner">
+        <div class="register-box">
+          <div class="register-text">
+            <h2>
+              看護師無料登録
+            </h2>
+
+            <p>
+              求職中の看護師の方は無料で登録できます。
+              希望する勤務地や働き方などをご登録ください。
+            </p>
+          </div>
+
+          <a
+            href="nurse-register.html"
+            class="btn btn-primary"
+          >
+            無料登録する
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="jobs-section">
-    <div class="section-inner">
-      <h2 class="section-title">求人を探す</h2>
-      <div class="title-line"></div>
-      <p class="lead">
-        ご希望の条件から、あなたに合った求人を見つけましょう。
-      </p>
+    <section class="medical-section">
+      <div class="section-inner">
+        <div class="medical-card">
+          <div class="medical-text">
+            <h2>
+              医療機関の皆様へ
+            </h2>
 
-      <a href="jobs.html" class="main-search-btn">
-        求人を検索する <span>›</span>
-      </a>
-    </div>
-  </section>
+            <p>
+              OKAメディカルネクストでは、
+              看護師採用に取り組む病院・クリニック・
+              訪問看護ステーションなどの医療機関様を支援しています。
+              求人掲載や掲載方法について、お気軽にご相談ください。
+            </p>
 
-  <section class="medical-section">
-    <div class="section-inner">
-      <div class="medical-card">
-        <div class="medical-text">
-          <h2>医療機関の皆様へ</h2>
+            <a
+              href="medical.html"
+              class="btn btn-primary"
+            >
+              医療機関向けページへ
+            </a>
+          </div>
+
+          <div
+            class="medical-image"
+            role="img"
+            aria-label="医療機関で働くスタッフ"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="campaign-link">
+      <div class="campaign-box">
+        <div class="campaign-text">
+          <h2>
+            先着10施設限定・初月掲載料無料
+          </h2>
+
           <p>
-            OKAメディカルネクストでは、看護師採用に取り組む医療機関様を支援しています。
-            求人掲載や採用相談について、お気軽にお問い合わせください。
+            写真と求人情報をご提供いただければ、
+            求人掲載ページの作成も無料でサポートします。
           </p>
-          <a href="medical.html" class="btn btn-primary">医療機関向けページへ</a>
         </div>
-        <div class="medical-image"></div>
+
+        <a
+          href="campaign.html"
+          class="campaign-btn"
+        >
+          キャンペーンを見る
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact">
-    <div class="section-inner">
-      <h2 class="section-title">お問い合わせ</h2>
-      <div class="title-line"></div>
-      <p class="lead">
-        看護師の方、医療機関の方、どちらからのお問い合わせも受け付けています。
-      </p>
-      <a href="contact.html" class="btn btn-primary">お問い合わせする</a>
-    </div>
-  </section>
+    <section class="contact">
+      <div class="section-inner">
+        <h2 class="section-title">
+          お問い合わせ
+        </h2>
 
-</main>
+        <div class="title-line"></div>
 
-<footer>
-  <p>&copy; OKA Medical Next. All Rights Reserved.</p>
-</footer>
+        <p class="lead">
+          看護師の方、医療機関の方、
+          どちらからのお問い合わせも受け付けています。
+        </p>
+
+        <a
+          href="contact.html"
+          class="btn btn-primary"
+        >
+          お問い合わせする
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; OKA Medical Next. All Rights Reserved.
+    </p>
+  </footer>
 
 </body>
 </html>
