@@ -1,335 +1,770 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>求人掲載申込フォーム｜OKAメディカルネクスト</title>
+  <title>求人掲載相談フォーム｜OKAメディカルネクスト</title>
 
-<style>
-*{box-sizing:border-box}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body{
-  margin:0;
-  font-family:"Helvetica Neue",Arial,sans-serif;
-  background:#f8fbfc;
-  color:#333;
-  line-height:1.7;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header{
-  background:#fff;
-  padding:14px 20px;
-  box-shadow:0 2px 12px rgba(0,0,0,0.06);
-  position:sticky;
-  top:0;
-  z-index:20;
-}
+    body {
+      margin: 0;
+      color: #333;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      background: #f8fbfc;
+    }
 
-.header-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
+    a {
+      text-decoration: none;
+    }
 
-.logo-area{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:#1497a3;
-  font-weight:800;
-  font-size:1.25rem;
-  white-space:nowrap;
-  text-decoration:none;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 14px 20px;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
 
-.logo-area img{
-  width:58px;
-  height:auto;
-}
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
 
-nav{
-  display:flex;
-  gap:28px;
-  font-size:0.98rem;
-  font-weight:800;
-}
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #1497a3;
+      font-size: 1.25rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
 
-nav a{
-  color:#1497a3;
-  text-decoration:none;
-}
+    .logo-area img {
+      width: 58px;
+      height: auto;
+    }
 
-.container{
-  max-width:980px;
-  margin:50px auto;
-  padding:0 20px;
-}
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
 
-.card{
-  background:#fff;
-  border-radius:24px;
-  padding:40px;
-  box-shadow:0 6px 24px rgba(0,0,0,0.08);
-}
+    nav a {
+      color: #1497a3;
+    }
 
-h1{
-  text-align:center;
-  color:#139aaa;
-}
+    nav a:hover {
+      color: #ef7099;
+    }
 
-.subtitle{
-  text-align:center;
-  color:#666;
-  margin-bottom:40px;
-}
+    .container {
+      max-width: 980px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
 
-.form-group{
-  margin-bottom:25px;
-}
+    .card {
+      padding: 40px;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    }
 
-label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:8px;
-}
+    h1 {
+      margin: 0;
+      color: #139aaa;
+      font-size: 2rem;
+      line-height: 1.4;
+      text-align: center;
+    }
 
-input{
-  width:100%;
-  padding:14px;
-  border:1px solid #ddd;
-  border-radius:12px;
-  font-size:16px;
-}
+    .title-line {
+      width: 58px;
+      height: 4px;
+      margin: 18px auto 24px;
+      background: #ef7099;
+      border-radius: 999px;
+    }
 
-.plan-price-box{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
-  margin:20px 0 40px;
-}
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: #666;
+      text-align: center;
+    }
 
-.plan-price-card{
-  background:#f8fbfc;
-  border-radius:18px;
-  padding:24px;
-  border:2px solid #e5eef0;
-  cursor:pointer;
-}
+    .form-guide {
+      margin-bottom: 36px;
+      padding: 22px 24px;
+      background: #eefafb;
+      border: 1px solid #d1ecef;
+      border-radius: 16px;
+    }
 
-.plan-price-card.selected{
-  border:3px solid #22b8c8;
-  background:#e8fbfd;
-}
+    .form-guide strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #139aaa;
+      font-size: 1.05rem;
+    }
 
-.plan-price-card h3{
-  margin:0 0 12px;
-  color:#139aaa;
-}
+    .form-guide p {
+      margin: 0;
+      color: #53666c;
+      font-size: 0.95rem;
+    }
 
-.price{
-  font-size:26px;
-  font-weight:bold;
-  color:#139aaa;
-  margin:15px 0 20px;
-}
+    .section-heading {
+      margin: 36px 0 22px;
+      padding-bottom: 10px;
+      color: #139aaa;
+      font-size: 1.3rem;
+      border-bottom: 2px solid #dceff1;
+    }
 
-.btn{
-  display:inline-block;
-  background:#22b8c8;
-  color:#fff;
-  border:none;
-  border-radius:999px;
-  padding:14px 28px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  text-decoration:none;
-}
+    .form-group {
+      margin-bottom: 25px;
+    }
 
-.btn.small{
-  padding:10px 18px;
-  font-size:14px;
-}
+    label,
+    .field-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
 
-.center{
-  text-align:center;
-}
+    .required {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 7px;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #ef7099;
+      border-radius: 999px;
+      vertical-align: middle;
+    }
 
-.note{
-  margin-top:25px;
-  font-size:14px;
-  color:#666;
-  text-align:center;
-}
+    .optional {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 7px;
+      color: #65767b;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #e8edef;
+      border-radius: 999px;
+      vertical-align: middle;
+    }
 
-@media(max-width:768px){
-  .header-inner{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      color: #333;
+      font-family: inherit;
+      font-size: 16px;
+      background: #fff;
+      border: 1px solid #ccd9dc;
+      border-radius: 12px;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
 
-  nav{
-    width:100%;
-    justify-content:space-between;
-    gap:8px;
-    font-size:0.86rem;
-  }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #22b8c8;
+      box-shadow: 0 0 0 4px rgba(34, 184, 200, 0.12);
+    }
 
-  .logo-area{
-    font-size:1.05rem;
-  }
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
 
-  .logo-area img{
-    width:54px;
-  }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
 
-  .plan-price-box{
-    grid-template-columns:1fr;
-  }
+    .choice-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-  .card{
-    padding:28px;
-  }
+    .choice-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 180px;
+      padding: 12px 16px;
+      background: #f8fbfc;
+      border: 1px solid #dce8ea;
+      border-radius: 12px;
+      cursor: pointer;
+    }
 
-  .btn{
-    width:100%;
-  }
-}
-</style>
+    .choice-item input {
+      width: auto;
+      margin: 0;
+      accent-color: #22b8c8;
+    }
+
+    .choice-item span {
+      font-size: 0.95rem;
+    }
+
+    .privacy-box {
+      margin: 32px 0 26px;
+      padding: 20px 22px;
+      color: #596b70;
+      font-size: 0.9rem;
+      background: #f7f9fa;
+      border-radius: 14px;
+    }
+
+    .privacy-box p {
+      margin: 0;
+    }
+
+    .agreement {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .agreement input {
+      width: auto;
+      margin-top: 6px;
+      accent-color: #22b8c8;
+    }
+
+    .agreement label {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 320px;
+      padding: 15px 32px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #23c7cc, #11a7b8);
+      border: none;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(17, 167, 184, 0.24);
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(17, 167, 184, 0.3);
+    }
+
+    .note {
+      margin: 24px 0 0;
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .back-link {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .back-link a {
+      color: #139aaa;
+      font-weight: 700;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 28px 20px;
+      color: #fff;
+      font-size: 0.9rem;
+      text-align: center;
+      background: #1497a3;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 16px;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 0.86rem;
+      }
+
+      .logo-area {
+        font-size: 1.05rem;
+      }
+
+      .logo-area img {
+        width: 54px;
+      }
+
+      .container {
+        margin: 30px auto;
+        padding: 0 16px;
+      }
+
+      .card {
+        padding: 28px 20px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      .subtitle {
+        margin-bottom: 26px;
+        text-align: left;
+      }
+
+      .subtitle br {
+        display: none;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .choice-box {
+        flex-direction: column;
+      }
+
+      .choice-item {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .btn {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .agreement {
+        justify-content: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo-area">
-      <img src="logo.png" alt="OKAメディカルネクスト ロゴ">
-      <span>OKAメディカルネクスト</span>
-    </a>
+  <header>
+    <div class="header-inner">
 
-    <nav>
-      <a href="jobs.html">求人を探す</a>
-      <a href="medical.html">医療機関の方へ</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
+      <a href="index.html" class="logo-area">
+        <img src="logo.png" alt="OKAメディカルネクスト ロゴ">
+        <span>OKAメディカルネクスト</span>
+      </a>
 
-<div class="container">
-  <div class="card">
+      <nav>
+        <a href="jobs.html">求人を探す</a>
+        <a href="medical.html">医療機関の方へ</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
 
-    <h1>求人掲載申込フォーム</h1>
+    </div>
+  </header>
 
-    <p class="subtitle">
-      医療機関様向けの掲載申込フォームです。<br>
-      内容確認後、OKAメディカルネクストよりご連絡いたします。
-    </p>
+  <main class="container">
 
-    <form>
+    <div class="card">
 
-      <div class="form-group">
-        <label>医療機関名</label>
-        <input type="text" placeholder="〇〇病院">
+      <h1>求人掲載相談フォーム</h1>
+      <div class="title-line"></div>
+
+      <p class="subtitle">
+        医療機関様向けの求人掲載相談フォームです。<br>
+        ご入力いただいた内容を確認後、OKAメディカルネクストよりご連絡いたします。
+      </p>
+
+      <div class="form-guide">
+        <strong>求人内容が決まっていない段階でもご相談いただけます</strong>
+
+        <p>
+          掲載する文章や写真の準備についてもサポートいたします。
+          医療機関名、ご担当者様の連絡先など、分かる範囲でご入力ください。
+        </p>
       </div>
 
-      <div class="form-group">
-        <label>担当者氏名</label>
-        <input type="text" placeholder="山田 太郎">
-      </div>
+      <!--
+        Googleフォームなどの送信先が決まったら、
+        action="#" の部分を送信先URLに変更してください。
+      -->
+      <form action="#" method="post">
 
-      <div class="form-group">
-        <label>メールアドレス</label>
-        <input type="email" placeholder="sample@example.com">
-      </div>
+        <h2 class="section-heading">医療機関様の情報</h2>
 
-      <div class="form-group">
-        <label>連絡先番号</label>
-        <input type="tel" placeholder="03-1234-5678">
-      </div>
+        <div class="form-group">
+          <label for="medicalName">
+            医療機関名
+            <span class="required">必須</span>
+          </label>
 
-      <div class="form-group">
-        <label>募集期間</label>
-        <input type="text" placeholder="例：2026年7月～2026年9月">
-      </div>
-
-      <h2>掲載料金</h2>
-
-      <div class="plan-price-box">
-
-        <div class="plan-price-card" id="standardCard" onclick="selectPlan('standard')">
-          <h3>スタンダードプラン</h3>
-          <button type="button" class="btn small">このプランを選択</button>
-
-          <p class="price">月額 15,000円（税込16,500円）</p>
-
-          <ul>
-            <li>求人掲載 1件</li>
-            <li>施設紹介ページ掲載</li>
-            <li>写真掲載</li>
-          </ul>
+          <input
+            type="text"
+            id="medicalName"
+            name="medical_name"
+            placeholder="例：〇〇病院"
+            required
+          >
         </div>
 
-        <div class="plan-price-card" id="premiumCard" onclick="selectPlan('premium')">
-          <h3>プレミアムプラン</h3>
-          <button type="button" class="btn small">このプランを選択</button>
+        <div class="form-row">
 
-          <p class="price">月額 35,000円（税込38,500円）</p>
+          <div class="form-group">
+            <label for="facilityType">
+              施設種別
+              <span class="required">必須</span>
+            </label>
 
-          <ul>
-            <li>求人掲載 最大5件</li>
-            <li>施設紹介ページ掲載</li>
-            <li>スタッフ紹介掲載</li>
-            <li>職場データ掲載</li>
-            <li>優先表示</li>
-            <li>おすすめ求人掲載</li>
-            <li>オファー希望求職者の閲覧</li>
-          </ul>
+            <select id="facilityType" name="facility_type" required>
+              <option value="">選択してください</option>
+              <option value="hospital">病院</option>
+              <option value="clinic">クリニック・診療所</option>
+              <option value="home-nursing">訪問看護ステーション</option>
+              <option value="elderly-care">介護施設</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="area">
+              所在地
+              <span class="required">必須</span>
+            </label>
+
+            <input
+              type="text"
+              id="area"
+              name="area"
+              placeholder="例：東京都新宿区"
+              required
+            >
+          </div>
+
         </div>
 
+        <div class="form-group">
+          <label for="website">
+            医療機関Webサイト
+            <span class="optional">任意</span>
+          </label>
+
+          <input
+            type="url"
+            id="website"
+            name="website"
+            placeholder="例：https://example.com"
+          >
+        </div>
+
+        <h2 class="section-heading">ご担当者様の情報</h2>
+
+        <div class="form-group">
+          <label for="personName">
+            ご担当者氏名
+            <span class="required">必須</span>
+          </label>
+
+          <input
+            type="text"
+            id="personName"
+            name="person_name"
+            placeholder="例：山田 太郎"
+            required
+          >
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="email">
+              メールアドレス
+              <span class="required">必須</span>
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="例：sample@example.com"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">
+              連絡先番号
+              <span class="required">必須</span>
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="例：03-1234-5678"
+              required
+            >
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <span class="field-label">
+            希望するご連絡方法
+            <span class="optional">任意</span>
+          </span>
+
+          <div class="choice-box">
+
+            <label class="choice-item">
+              <input
+                type="radio"
+                name="contact_method"
+                value="email"
+              >
+              <span>メール</span>
+            </label>
+
+            <label class="choice-item">
+              <input
+                type="radio"
+                name="contact_method"
+                value="phone"
+              >
+              <span>電話</span>
+            </label>
+
+            <label class="choice-item">
+              <input
+                type="radio"
+                name="contact_method"
+                value="either"
+              >
+              <span>どちらでも可</span>
+            </label>
+
+          </div>
+        </div>
+
+        <h2 class="section-heading">求人掲載について</h2>
+
+        <div class="form-group">
+          <label for="occupation">
+            募集職種
+            <span class="optional">任意</span>
+          </label>
+
+          <select id="occupation" name="occupation">
+            <option value="">選択してください</option>
+            <option value="nurse">看護師</option>
+            <option value="assistant-nurse">准看護師</option>
+            <option value="midwife">助産師</option>
+            <option value="public-health-nurse">保健師</option>
+            <option value="doctor">医師</option>
+            <option value="other">その他</option>
+            <option value="undecided">まだ決まっていない</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="employmentType">
+              雇用形態
+              <span class="optional">任意</span>
+            </label>
+
+            <select id="employmentType" name="employment_type">
+              <option value="">選択してください</option>
+              <option value="full-time">正社員</option>
+              <option value="part-time">パート・アルバイト</option>
+              <option value="contract">契約社員</option>
+              <option value="other">その他</option>
+              <option value="undecided">まだ決まっていない</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="startPeriod">
+              掲載開始希望時期
+              <span class="optional">任意</span>
+            </label>
+
+            <input
+              type="text"
+              id="startPeriod"
+              name="start_period"
+              placeholder="例：2026年8月頃"
+            >
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <span class="field-label">
+            現在準備できているもの
+            <span class="optional">任意・複数選択可</span>
+          </span>
+
+          <div class="choice-box">
+
+            <label class="choice-item">
+              <input
+                type="checkbox"
+                name="prepared_items"
+                value="job-information"
+              >
+              <span>求人情報</span>
+            </label>
+
+            <label class="choice-item">
+              <input
+                type="checkbox"
+                name="prepared_items"
+                value="photos"
+              >
+              <span>施設・職場写真</span>
+            </label>
+
+            <label class="choice-item">
+              <input
+                type="checkbox"
+                name="prepared_items"
+                value="introduction"
+              >
+              <span>施設紹介文</span>
+            </label>
+
+            <label class="choice-item">
+              <input
+                type="checkbox"
+                name="prepared_items"
+                value="nothing"
+              >
+              <span>まだ準備していない</span>
+            </label>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">
+            ご相談内容
+            <span class="optional">任意</span>
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="募集状況、掲載を検討している求人、確認したいことなどをご入力ください。"
+          ></textarea>
+        </div>
+
+        <div class="privacy-box">
+          <p>
+            ご入力いただいた情報は、求人掲載に関するご案内・ご連絡のために使用します。
+            内容を確認後、担当者よりご連絡いたします。
+          </p>
+        </div>
+
+        <div class="agreement">
+          <input
+            type="checkbox"
+            id="agreement"
+            name="agreement"
+            required
+          >
+
+          <label for="agreement">
+            入力内容を確認し、個人情報の取り扱いに同意します。
+          </label>
+        </div>
+
+        <div class="center">
+          <button type="submit" class="btn">
+            無料で求人掲載について相談する
+          </button>
+        </div>
+
+      </form>
+
+      <p class="note">
+        ※お問い合わせの段階で料金が発生することはありません。<br>
+        掲載内容と料金をご案内し、ご確認いただいた後に正式なお申し込みとなります。
+      </p>
+
+      <div class="back-link">
+        <a href="medical.html">← 医療機関の方へ戻る</a>
       </div>
 
-      <input type="hidden" id="selectedPlan" name="plan" value="standard">
+    </div>
 
-      <div class="center">
-        <a id="paymentLink" href="payment.html?plan=standard" class="btn">
-          お支払い手続きへ進む
-        </a>
-      </div>
+  </main>
 
-    </form>
-
-    <p class="note">
-      ※現在はサンプル画面です。<br>
-      今後Googleフォームと連携して受付を行う予定です。
-    </p>
-
-  </div>
-</div>
-
-<script>
-function selectPlan(plan){
-  document.getElementById("selectedPlan").value = plan;
-
-  document.getElementById("standardCard").classList.remove("selected");
-  document.getElementById("premiumCard").classList.remove("selected");
-
-  if(plan === "premium"){
-    document.getElementById("premiumCard").classList.add("selected");
-    document.getElementById("paymentLink").href = "payment.html?plan=premium";
-  }else{
-    document.getElementById("standardCard").classList.add("selected");
-    document.getElementById("paymentLink").href = "payment.html?plan=standard";
-  }
-}
-
-const params = new URLSearchParams(window.location.search);
-const initialPlan = params.get("plan") || "standard";
-selectPlan(initialPlan);
-</script>
+  <footer>
+    <p>&copy; OKA Medical Next. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
